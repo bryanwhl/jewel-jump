@@ -373,6 +373,67 @@ MonoBehaviour:
   initialPos: {x: 0, y: 0, z: 0}
   amplitude: 0.1
   rotateSpeed: 30
+--- !u!1001 &176648385
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1991931820083336376, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_Name
+      value: SceneAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111924311517468270, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: cad850326e1ab41fa8c5d0406a979064, type: 3}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_RootOrder
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.9031958
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.43905067
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.87971264
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
 --- !u!1 &181127293
 GameObject:
   m_ObjectHideFlags: 0
@@ -3323,7 +3384,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1591885566062112536, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1591885566062112536, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3378,18 +3439,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2053268055}
     m_Modifications:
-    - target: {fileID: 1248108418070468961, guid: 38f0f29ed6dff4dbf96b083db6cc5f88, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -2100405044080452929, guid: 3cfb26c2e31fb483da68a52d34429e14, type: 3}
-    - target: {fileID: 1248108418070468990, guid: 38f0f29ed6dff4dbf96b083db6cc5f88, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1248108418560533780, guid: 38f0f29ed6dff4dbf96b083db6cc5f88, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1374759580961941160, guid: b83733c887f6540689a9cb9f81037e22, type: 3}
     - target: {fileID: 4286239228585595936, guid: 38f0f29ed6dff4dbf96b083db6cc5f88, type: 3}
       propertyPath: m_Name
       value: AudioToggle

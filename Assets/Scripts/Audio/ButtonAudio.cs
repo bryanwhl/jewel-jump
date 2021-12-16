@@ -7,12 +7,12 @@ public class ButtonAudio : MonoBehaviour
     public AudioClip hover;
     public AudioClip click;
 
-    AudioSource audioSource;
+    AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = AudioManager.instance.GetComponent<AudioSource>();
+        audioManager = AudioManager.instance;
     }
 
     // Update is called once per frame
@@ -22,16 +22,10 @@ public class ButtonAudio : MonoBehaviour
     }
 
     public void PlayHover() {
-        if(!AudioManager.instance.muted) {
-            audioSource.clip = hover;
-            audioSource.Play();
-        }
+        audioManager.PlayUISFX(hover);
     }
 
     public void PlayClick() {
-        if(!AudioManager.instance.muted) {
-            audioSource.clip = click;
-            audioSource.Play();
-        }
+        audioManager.PlayUISFX(click);
     }
 }

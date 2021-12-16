@@ -11,6 +11,8 @@ public class AudioToggle : MonoBehaviour
     void Start()
     {
         audioManager = AudioManager.instance;
+        OffSprite.SetActive(audioManager.muted);
+        OnSprite.SetActive(!audioManager.muted);
     }
 
     // Update is called once per frame

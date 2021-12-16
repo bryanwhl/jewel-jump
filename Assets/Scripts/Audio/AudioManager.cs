@@ -6,6 +6,11 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     public bool muted = false;
+
+    public AudioSource gameSource;
+    public AudioSource uiSource;
+    public AudioSource musicSource;
+
     void Awake() {
         DontDestroyOnLoad(gameObject);
         if(instance == null) {
@@ -28,6 +33,37 @@ public class AudioManager : MonoBehaviour
     }
 
     public void ToggleAudio() {
-        muted = !muted;
+        if(muted) {
+            gameSource.Play();
+            uiSource.Play();
+            musicSource.Play();
+            muted = false;
+        } else {
+            gameSource.Pause();
+            uiSource.Pause();
+            musicSource.Pause();
+            muted = true;
+        }
+    }
+
+    private void PlayIfUnmuted(AudioSource source) {
+        if(!muted) {
+            source.Play();
+        }
+    }
+
+    public void PlayUISFX(AudioClip clip) {
+        uiSource.clip = clip;
+        PlayIfUnmuted(uiSource);
+    }
+
+    public void PlayGameSFX(AudioClip clip) {
+        gameSource.clip = clip;
+        PlayIfUnmuted(gameSource);
+    }
+
+    public void PlayMusic(AudioClip clip) {
+        musicSource.clip = clip;
+        PlayIfUnmuted(musicSource);
     }
 }
