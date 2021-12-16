@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/BingSen.unity
+    guid: 6b67bb61502c02f4d8964eb85b07b4f1
+  - enabled: 1
+    path: Assets/Scenes/JumpingScene.unity
+    guid: 80375ffc873145843b619546b2cf603d
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/MockupScene 1.unity
+    guid: 17964726beda24dbdb7c26d205b502d8
   m_configObjects: {}
