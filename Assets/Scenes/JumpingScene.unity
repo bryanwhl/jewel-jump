@@ -554,12 +554,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301c90f5189c7724991b1b848144481a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jewelListPrefab: {fileID: 0}
+  jewelListPrefab: {fileID: 1120345461512350015, guid: 4991e75de4255364b98c06b851769f47, type: 3}
   GameController: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 181127300}
+  player2: {fileID: 1821020421}
+  player3: {fileID: 741887404}
+  player4: {fileID: 481473863}
 --- !u!1001 &301829776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -814,12 +814,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301c90f5189c7724991b1b848144481a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jewelListPrefab: {fileID: 0}
+  jewelListPrefab: {fileID: 1120345461512350015, guid: 4991e75de4255364b98c06b851769f47, type: 3}
   GameController: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 181127300}
+  player2: {fileID: 1821020421}
+  player3: {fileID: 741887404}
+  player4: {fileID: 481473863}
 --- !u!1001 &476691956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1177,10 +1177,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc830fc01db6c94389d07bdf3ae5c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1: {fileID: 0}
-  Player2: {fileID: 0}
-  Player3: {fileID: 0}
-  Player4: {fileID: 0}
+  Player1: {fileID: 181127293}
+  Player2: {fileID: 1821020416}
+  Player3: {fileID: 741887398}
+  Player4: {fileID: 481473857}
 --- !u!4 &508257530
 Transform:
   m_ObjectHideFlags: 0
@@ -1319,12 +1319,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301c90f5189c7724991b1b848144481a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jewelListPrefab: {fileID: 0}
+  jewelListPrefab: {fileID: 1120345461512350015, guid: 4991e75de4255364b98c06b851769f47, type: 3}
   GameController: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 181127300}
+  player2: {fileID: 1821020421}
+  player3: {fileID: 741887404}
+  player4: {fileID: 481473863}
 --- !u!1001 &698793238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2152,12 +2152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301c90f5189c7724991b1b848144481a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jewelListPrefab: {fileID: 0}
+  jewelListPrefab: {fileID: 1120345461512350015, guid: 4991e75de4255364b98c06b851769f47, type: 3}
   GameController: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 181127300}
+  player2: {fileID: 1821020421}
+  player3: {fileID: 741887404}
+  player4: {fileID: 481473863}
 --- !u!1001 &1040604030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2713,12 +2713,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301c90f5189c7724991b1b848144481a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jewelListPrefab: {fileID: 0}
+  jewelListPrefab: {fileID: 1120345461512350015, guid: 4991e75de4255364b98c06b851769f47, type: 3}
   GameController: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 181127300}
+  player2: {fileID: 1821020421}
+  player3: {fileID: 741887404}
+  player4: {fileID: 481473863}
 --- !u!1 &1821020416
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,12 +3014,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301c90f5189c7724991b1b848144481a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jewelListPrefab: {fileID: 0}
+  jewelListPrefab: {fileID: 1120345461512350015, guid: 4991e75de4255364b98c06b851769f47, type: 3}
   GameController: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 181127300}
+  player2: {fileID: 1821020421}
+  player3: {fileID: 741887404}
+  player4: {fileID: 481473863}
 --- !u!1 &1921768957 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -3055,12 +3055,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301c90f5189c7724991b1b848144481a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jewelListPrefab: {fileID: 0}
+  jewelListPrefab: {fileID: 1120345461512350015, guid: 4991e75de4255364b98c06b851769f47, type: 3}
   GameController: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 181127300}
+  player2: {fileID: 1821020421}
+  player3: {fileID: 741887404}
+  player4: {fileID: 481473863}
 --- !u!1 &1960334046 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -3137,12 +3137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301c90f5189c7724991b1b848144481a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jewelListPrefab: {fileID: 0}
+  jewelListPrefab: {fileID: 1120345461512350015, guid: 4991e75de4255364b98c06b851769f47, type: 3}
   GameController: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 181127300}
+  player2: {fileID: 1821020421}
+  player3: {fileID: 741887404}
+  player4: {fileID: 481473863}
 --- !u!1001 &2020508321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3235,12 +3235,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301c90f5189c7724991b1b848144481a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jewelListPrefab: {fileID: 0}
+  jewelListPrefab: {fileID: 1120345461512350015, guid: 4991e75de4255364b98c06b851769f47, type: 3}
   GameController: {fileID: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 181127300}
+  player2: {fileID: 1821020421}
+  player3: {fileID: 741887404}
+  player4: {fileID: 481473863}
 --- !u!1001 &2069017017
 PrefabInstance:
   m_ObjectHideFlags: 0
