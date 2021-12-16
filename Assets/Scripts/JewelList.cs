@@ -6,7 +6,7 @@ public class JewelList : MonoBehaviour
 {
     List<Jewel> jewelList;
     [SerializeField] Jewel jewelPrefab;
-    private int numJewels;
+    public int numJewels;
 
     void Start()
     {
