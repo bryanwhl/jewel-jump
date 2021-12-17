@@ -28,6 +28,7 @@ public class Player2 : MonoBehaviour
     public List<PowerUp> powerUps;
     public AudioClip jumpSFX;
     public AudioClip landedSFX;
+    public AudioClip readySFX;
 
     public CharacterAnimationManager animationManager;
 
@@ -89,10 +90,22 @@ public class Player2 : MonoBehaviour
             }
             GameController.Player2Flag = 0;
         }
+
+        Vector3 vel = GetComponent<Rigidbody>().velocity;
+        if(vel.sqrMagnitude > 0) {
+            Vector3 lookTarget = new Vector3(transform.position.x + vel.x, transform.position.y, transform.position.z + vel.z);
+            transform.LookAt(lookTarget);
+        }
+    }
+
+    public void Reset() {
+        transform.position = new Vector3(1, 0.5f, 0);
+        transform.rotation = Quaternion.Euler(0, -90, 0);
     }
 
     public void SetReady() {
         animationManager.Ready();
+        AudioManager.instance.PlayPlayerSFX(readySFX, 2);
     }
 
     private void OnCollisionEnter(Collision other) {

@@ -174,10 +174,10 @@ public class GameController : MonoBehaviour
             if (Player1CoinSettled == true && Player2CoinSettled == true && Player3CoinSettled == true && Player4CoinSettled == true)
             {
                 areAllInputsIn = false;
-                Player1.transform.position = new Vector3(0, 0.5f, 1);
-                Player2.transform.position = new Vector3(1, 0.5f, 0);
-                Player3.transform.position = new Vector3(0, 0.5f, -1);
-                Player4.transform.position = new Vector3(-1, 0.5f, 0);
+                Player1.GetComponent<Player1>().Reset();
+                Player2.GetComponent<Player2>().Reset();
+                Player3.GetComponent<Player3>().Reset();
+                Player4.GetComponent<Player4>().Reset();
                 isAnimationComplete = false;
                 Player1CoinSettled = false;
                 Player2CoinSettled = false;

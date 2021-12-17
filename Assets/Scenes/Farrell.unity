@@ -271,14 +271,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181127293}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0.5, z: 1}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 1420815145}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!54 &181127299
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -330,6 +330,7 @@ MonoBehaviour:
   powerUps: []
   jumpSFX: {fileID: 8300000, guid: 0c5215ed6103041fca2638d41884b45c, type: 3}
   landedSFX: {fileID: 8300000, guid: dc93220acf7db4492921432cad3f45bd, type: 3}
+  readySFX: {fileID: 8300000, guid: dba6dd58979d94ca6be3c7f9ff6b5844, type: 3}
   animationManager: {fileID: 0}
 --- !u!1 &249275187 stripped
 GameObject:
@@ -608,14 +609,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481473857}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1, y: 0.5, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 2143004060}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!54 &481473862
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -667,6 +668,7 @@ MonoBehaviour:
   powerUps: []
   jumpSFX: {fileID: 8300000, guid: 0c5215ed6103041fca2638d41884b45c, type: 3}
   landedSFX: {fileID: 8300000, guid: dc93220acf7db4492921432cad3f45bd, type: 3}
+  readySFX: {fileID: 8300000, guid: dba6dd58979d94ca6be3c7f9ff6b5844, type: 3}
   animationManager: {fileID: 0}
 --- !u!1 &485578085
 GameObject:
@@ -1137,6 +1139,7 @@ MonoBehaviour:
   powerUps: []
   jumpSFX: {fileID: 8300000, guid: 0c5215ed6103041fca2638d41884b45c, type: 3}
   landedSFX: {fileID: 8300000, guid: dc93220acf7db4492921432cad3f45bd, type: 3}
+  readySFX: {fileID: 8300000, guid: dba6dd58979d94ca6be3c7f9ff6b5844, type: 3}
   animationManager: {fileID: 0}
 --- !u!1001 &805672954
 PrefabInstance:
@@ -2027,6 +2030,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8305681285921185371, guid: 82d4d0a398a124905a57799979db0e9c, type: 3}
   m_PrefabInstance: {fileID: 1566635722}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1650501792
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1991931820083336376, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_Name
+      value: SceneAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111924311517468270, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: cad850326e1ab41fa8c5d0406a979064, type: 3}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.9031958
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.43905067
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.87971264
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442179406332590374, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a64cb14513c3433684aded63f83df2a, type: 3}
 --- !u!1 &1737516414 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -2161,14 +2225,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821020416}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1, y: 0.5, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 1340161359}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1821020421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2204,6 +2268,7 @@ MonoBehaviour:
   powerUps: []
   jumpSFX: {fileID: 8300000, guid: 0c5215ed6103041fca2638d41884b45c, type: 3}
   landedSFX: {fileID: 8300000, guid: dc93220acf7db4492921432cad3f45bd, type: 3}
+  readySFX: {fileID: 8300000, guid: dba6dd58979d94ca6be3c7f9ff6b5844, type: 3}
   animationManager: {fileID: 0}
 --- !u!54 &1821020422
 Rigidbody:
