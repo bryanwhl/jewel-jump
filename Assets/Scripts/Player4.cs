@@ -25,6 +25,7 @@ public class Player4 : MonoBehaviour
     public Tile BottomTileScript;
     public Tile LeftTileScript;
     public int jewel;
+    public List<PowerUp> powerUps;
 
     void Start()
     {
@@ -48,24 +49,32 @@ public class Player4 : MonoBehaviour
         BottomTileScript = BottomTile.GetComponent<Tile>();
         LeftTileScript = LeftTile.GetComponent<Tile>();
         jewel = 0;
+        powerUps = new List<PowerUp>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector3 center = new Vector3(0, 0, 0);
-        if (GameController.areAllInputsIn == true) 
+        if (GameController.areAllInputsIn == true)
         {
-            if (GameController.Player4Flag == 1) {
+            if (GameController.Player4Flag == 1)
+            {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * 5 + NorthWestTile.transform.position - transform.position, ForceMode.VelocityChange);
                 NorthWestTileScript.playersJumpingHere.Add(4);
-            } else if (GameController.Player4Flag == 2) {
+            }
+            else if (GameController.Player4Flag == 2)
+            {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * 5 + CenterTile.transform.position - transform.position, ForceMode.VelocityChange);
                 CenterTileScript.playersJumpingHere.Add(4);
-            } else if (GameController.Player4Flag == 3) {
+            }
+            else if (GameController.Player4Flag == 3)
+            {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * 5 + SouthWestTile.transform.position - transform.position, ForceMode.VelocityChange);
                 SouthWestTileScript.playersJumpingHere.Add(4);
-            } else if (GameController.Player4Flag == 4) {
+            }
+            else if (GameController.Player4Flag == 4)
+            {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * 5 + LeftTile.transform.position - transform.position, ForceMode.VelocityChange);
                 LeftTileScript.playersJumpingHere.Add(4);
             }

@@ -25,6 +25,7 @@ public class Player2 : MonoBehaviour
     public Tile LeftTileScript;
     public GameController GameController;
     public int jewel;
+    public List<PowerUp> powerUps;
 
     void Start()
     {
@@ -48,24 +49,32 @@ public class Player2 : MonoBehaviour
         BottomTileScript = BottomTile.GetComponent<Tile>();
         LeftTileScript = LeftTile.GetComponent<Tile>();
         jewel = 0;
+        powerUps = new List<PowerUp>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector3 center = new Vector3(0, 0, 0);
-        if (GameController.areAllInputsIn == true) 
+        if (GameController.areAllInputsIn == true)
         {
-            if (GameController.Player2Flag == 1) {
+            if (GameController.Player2Flag == 1)
+            {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * 5 + NorthEastTile.transform.position - transform.position, ForceMode.VelocityChange);
                 NorthEastTileScript.playersJumpingHere.Add(2);
-            } else if (GameController.Player2Flag == 2) {
+            }
+            else if (GameController.Player2Flag == 2)
+            {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * 5 + RightTile.transform.position - transform.position, ForceMode.VelocityChange);
                 RightTileScript.playersJumpingHere.Add(2);
-            } else if (GameController.Player2Flag == 3) {
+            }
+            else if (GameController.Player2Flag == 3)
+            {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * 5 + SouthEastTile.transform.position - transform.position, ForceMode.VelocityChange);
                 SouthEastTileScript.playersJumpingHere.Add(2);
-            } else if (GameController.Player2Flag == 4) {
+            }
+            else if (GameController.Player2Flag == 4)
+            {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * 5 + CenterTile.transform.position - transform.position, ForceMode.VelocityChange);
                 CenterTileScript.playersJumpingHere.Add(2);
             }

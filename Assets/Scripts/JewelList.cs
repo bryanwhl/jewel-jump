@@ -43,7 +43,7 @@ public class JewelList : MonoBehaviour
     public void SetNumber(int num)
     {
         numJewels = num;
-        Debug.Log("inside set number");
+        Debug.Log($"inside set number and num is {num}");
         for (int i = 0; i < 9; i++)
         {
             jewelList[i].gameObject.SetActive(false);
@@ -93,10 +93,12 @@ public class JewelList : MonoBehaviour
 
     void Update()
     {
-        if (GameController.areAllInputsIn == true) {
+        if (GameController.areAllInputsIn == true)
+        {
             setFlag = true;
         }
-        if (GameController.isAnimationComplete == true && GameController.Player1CoinSettled == true && GameController.Player2CoinSettled == true && GameController.Player3CoinSettled == true && GameController.Player4CoinSettled == true && setFlag == true) {
+        if (GameController.isAnimationComplete == true && GameController.Player1CoinSettled == true && GameController.Player2CoinSettled == true && GameController.Player3CoinSettled == true && GameController.Player4CoinSettled == true && setFlag == true)
+        {
             SetNumber((int)Random.Range(0.0f, 3.0f) + GameController.round);
             setFlag = false;
         }

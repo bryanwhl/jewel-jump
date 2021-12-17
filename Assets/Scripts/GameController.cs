@@ -20,10 +20,20 @@ public class GameController : MonoBehaviour
     public static bool Player2CoinSettled;
     public static bool Player3CoinSettled;
     public static bool Player4CoinSettled;
+    [SerializeField] List<PowerUpBase> spawnablePowerUps;
 
-    void resetAllInputsIn() {
+    void resetAllInputsIn()
+    {
         isAnimationComplete = true;
     }
+
+    //Comments by Bing Sen
+    // I dunno where you start every round, but when u start everyone and for example, want to put a PowerUp at CentreTile
+    // Make sure you do somewehere CentreTile.powerUp = new PowerUp(PowerUpBase theBaseTemplate)
+    //And then CentreTile.powerUp.gameObject.SetActive(true);
+    // You can obtain theBaseTemplate by taking a random PowerUpBase in the list above (the varaible named spawnablePowerUps);
+    // If no powerUp on CentreTile then make sure you set CentreTile.powerUp = null;
+    //And then CentreTile.powerUp.gameObject.SetActive(false);
 
     void Start()
     {
@@ -43,61 +53,94 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(round);
-        Debug.Log("=================");
-        if (round <= 10 && areAllInputsIn == false) {
+        // Debug.Log(round);
+        // Debug.Log("=================");
+        if (round <= 10 && areAllInputsIn == false)
+        {
             // Inputs for player 1
-            if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
                 Player1Flag = 1;
-            } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
                 Player1Flag = 2;
-            } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
                 Player1Flag = 3;
-            } else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
                 Player1Flag = 4;
             }
             // Inputs for player 2
-            if (Input.GetKeyDown(KeyCode.W)) {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
                 Player2Flag = 1;
-            } else if (Input.GetKeyDown(KeyCode.D)) {
+            }
+            else if (Input.GetKeyDown(KeyCode.D))
+            {
                 Player2Flag = 2;
-            } else if (Input.GetKeyDown(KeyCode.S)) {
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
                 Player2Flag = 3;
-            } else if (Input.GetKeyDown(KeyCode.A)) {
+            }
+            else if (Input.GetKeyDown(KeyCode.A))
+            {
                 Player2Flag = 4;
             }
             // Inputs for player 3
-            if (Input.GetKeyDown(KeyCode.T)) {
+            if (Input.GetKeyDown(KeyCode.T))
+            {
                 Player3Flag = 1;
-            } else if (Input.GetKeyDown(KeyCode.H)) {
+            }
+            else if (Input.GetKeyDown(KeyCode.H))
+            {
                 Player3Flag = 2;
-            } else if (Input.GetKeyDown(KeyCode.G)) {
+            }
+            else if (Input.GetKeyDown(KeyCode.G))
+            {
                 Player3Flag = 3;
-            } else if (Input.GetKeyDown(KeyCode.F)) {
+            }
+            else if (Input.GetKeyDown(KeyCode.F))
+            {
                 Player3Flag = 4;
             }
             // Inputs for player 4
-            if (Input.GetKeyDown(KeyCode.I)) {
+            if (Input.GetKeyDown(KeyCode.I))
+            {
                 Player4Flag = 1;
-            } else if (Input.GetKeyDown(KeyCode.L)) {
+            }
+            else if (Input.GetKeyDown(KeyCode.L))
+            {
                 Player4Flag = 2;
-            } else if (Input.GetKeyDown(KeyCode.K)) {
+            }
+            else if (Input.GetKeyDown(KeyCode.K))
+            {
                 Player4Flag = 3;
-            } else  if (Input.GetKeyDown(KeyCode.J)) {
+            }
+            else if (Input.GetKeyDown(KeyCode.J))
+            {
                 Player4Flag = 4;
             }
         }
-        if (Player1Flag != 0 && Player2Flag != 0 && Player3Flag != 0 && Player4Flag != 0) {
+        if (Player1Flag != 0 && Player2Flag != 0 && Player3Flag != 0 && Player4Flag != 0)
+        {
             areAllInputsIn = true;
             Debug.Log("Game State Changed");
         }
-        if (Player1Flag == 0 && Player2Flag == 0  && Player3Flag == 0 && Player4Flag == 0 && areAllInputsIn == true) {
+        if (Player1Flag == 0 && Player2Flag == 0 && Player3Flag == 0 && Player4Flag == 0 && areAllInputsIn == true)
+        {
             areAllInputsIn = false;
             Invoke("resetAllInputsIn", 2.0f);
         }
-        if (isAnimationComplete == true) {
+        if (isAnimationComplete == true)
+        {
             // Add coins
-            if (Player1CoinSettled == true && Player2CoinSettled == true && Player3CoinSettled == true && Player4CoinSettled == true) {
+            if (Player1CoinSettled == true && Player2CoinSettled == true && Player3CoinSettled == true && Player4CoinSettled == true)
+            {
                 areAllInputsIn = false;
                 Player1.transform.position = new Vector3(0, 0.5f, 1);
                 Player2.transform.position = new Vector3(1, 0.5f, 0);
