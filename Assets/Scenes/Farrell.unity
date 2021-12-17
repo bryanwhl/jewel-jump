@@ -839,6 +839,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 73c958a2bc0902b459f209f5ea5738fd, type: 2}
   - {fileID: 11400000, guid: 2f8ab757516e62247a03e7478827f3c1, type: 2}
   - {fileID: 11400000, guid: 017e23a8724989f4987b122db71cef06, type: 2}
+  GameUI: {fileID: 0}
 --- !u!4 &508257530
 Transform:
   m_ObjectHideFlags: 0
@@ -3302,6 +3303,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3067527276566874883, guid: 7b1237924de2f4d3591f75bd6c466c0a, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 674117449}
     - target: {fileID: 3067527276566874887, guid: 7b1237924de2f4d3591f75bd6c466c0a, type: 3}
       propertyPath: m_Pivot.x
       value: 0

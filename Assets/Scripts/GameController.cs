@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
     public static bool Player3CoinSettled;
     public static bool Player4CoinSettled;
     [SerializeField] List<PowerUpBase> spawnablePowerUps;
+    public static bool isGameOver = false;
+    public GameUI GameUI;
 
     void resetAllInputsIn()
     {
@@ -48,6 +50,8 @@ public class GameController : MonoBehaviour
         Player2CoinSettled = false;
         Player3CoinSettled = false;
         Player4CoinSettled = false;
+
+        GameUI = GameObject.Find("GameUI").GetComponent<GameUI>();
     }
 
     // Update is called once per frame
@@ -69,7 +73,7 @@ public class GameController : MonoBehaviour
         // Debug.Log(Player3CoinSettled);
         // Debug.Log(Player4CoinSettled);
         Debug.Log("=================");
-        if (round <= 10 && areAllInputsIn == false)
+        if (round <= 10 && areAllInputsIn == false && !isGameOver)
         {
             // Inputs for player 1
             if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -156,6 +160,12 @@ public class GameController : MonoBehaviour
                 Player4.SetReady();
             }
         }
+
+        if(round > 10) {
+            isGameOver = true;
+            GameUI.TriggerGameOver();
+        }
+
         if (Player1Flag != 0 && Player2Flag != 0 && Player3Flag != 0 && Player4Flag != 0)
         {
             areAllInputsIn = true;
