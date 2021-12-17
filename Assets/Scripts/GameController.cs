@@ -43,10 +43,20 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Player1Flag);
+        Debug.Log(Player2Flag);
+        Debug.Log(Player3Flag);
+        Debug.Log(Player4Flag);
+        Debug.Log(isAnimationComplete);
+        Debug.Log(areAllInputsIn);
+        Debug.Log(Player1CoinSettled);
+        Debug.Log(Player2CoinSettled);
+        Debug.Log(Player3CoinSettled);
+        Debug.Log(Player4CoinSettled);
+        Debug.Log("=================");
         if (round <= 10 && areAllInputsIn == false) {
             // Inputs for player 1
             if (Input.GetKeyDown(KeyCode.UpArrow)) {
-                Debug.Log("Up Key Pressed");
                 Player1Flag = 1;
             } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
                 Player1Flag = 2;
@@ -57,7 +67,6 @@ public class GameController : MonoBehaviour
             }
             // Inputs for player 2
             if (Input.GetKeyDown(KeyCode.W)) {
-                Debug.Log("Up Key Pressed");
                 Player2Flag = 1;
             } else if (Input.GetKeyDown(KeyCode.D)) {
                 Player2Flag = 2;
@@ -68,7 +77,6 @@ public class GameController : MonoBehaviour
             }
             // Inputs for player 3
             if (Input.GetKeyDown(KeyCode.T)) {
-                Debug.Log("Up Key Pressed");
                 Player3Flag = 1;
             } else if (Input.GetKeyDown(KeyCode.H)) {
                 Player3Flag = 2;
@@ -79,7 +87,6 @@ public class GameController : MonoBehaviour
             }
             // Inputs for player 4
             if (Input.GetKeyDown(KeyCode.I)) {
-                Debug.Log("Up Key Pressed");
                 Player4Flag = 1;
             } else if (Input.GetKeyDown(KeyCode.L)) {
                 Player4Flag = 2;
@@ -88,16 +95,13 @@ public class GameController : MonoBehaviour
             } else  if (Input.GetKeyDown(KeyCode.J)) {
                 Player4Flag = 4;
             }
-            Debug.Log(Player1Flag);
-            Debug.Log(Player2Flag);
-            Debug.Log(Player3Flag);
-            Debug.Log(Player4Flag);
         }
         if (Player1Flag != 0 && Player2Flag != 0 && Player3Flag != 0 && Player4Flag != 0) {
             areAllInputsIn = true;
             Debug.Log("Game State Changed");
         }
         if (Player1Flag == 0 && Player2Flag == 0  && Player3Flag == 0 && Player4Flag == 0 && areAllInputsIn == true) {
+            areAllInputsIn = false;
             Invoke("resetAllInputsIn", 2.0f);
         }
         if (isAnimationComplete == true) {
