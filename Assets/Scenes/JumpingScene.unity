@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44300658, g: 0.4921953, b: 0.57192475, a: 1}
+  m_IndirectSpecularColor: {r: 0.44300577, g: 0.49219447, b: 0.57192326, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -327,6 +327,8 @@ MonoBehaviour:
   GameController: {fileID: 0}
   jewel: 0
   powerUps: []
+  jumpSFX: {fileID: 8300000, guid: 0c5215ed6103041fca2638d41884b45c, type: 3}
+  landedSFX: {fileID: 8300000, guid: dc93220acf7db4492921432cad3f45bd, type: 3}
 --- !u!1 &249275187 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -369,6 +371,7 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  collectSFX: {fileID: 8300000, guid: 9ff2cbf2c536e4cb9a7f305d2c7bfbcd, type: 3}
 --- !u!1 &334653133 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -411,6 +414,7 @@ MonoBehaviour:
   player3: {fileID: 0}
   player4: {fileID: 0}
   powerUp: {fileID: 0}
+  collectSFX: {fileID: 8300000, guid: 9ff2cbf2c536e4cb9a7f305d2c7bfbcd, type: 3}
 --- !u!1 &372970928 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -453,6 +457,7 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  collectSFX: {fileID: 8300000, guid: 9ff2cbf2c536e4cb9a7f305d2c7bfbcd, type: 3}
 --- !u!1001 &476691956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -657,6 +662,8 @@ MonoBehaviour:
   LeftTileScript: {fileID: 0}
   jewel: 0
   powerUps: []
+  jumpSFX: {fileID: 8300000, guid: 0c5215ed6103041fca2638d41884b45c, type: 3}
+  landedSFX: {fileID: 8300000, guid: dc93220acf7db4492921432cad3f45bd, type: 3}
 --- !u!1 &485578085
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +749,7 @@ MonoBehaviour:
   player3: {fileID: 0}
   player4: {fileID: 0}
   powerUp: {fileID: 0}
+  collectSFX: {fileID: 8300000, guid: 9ff2cbf2c536e4cb9a7f305d2c7bfbcd, type: 3}
 --- !u!1 &500811730 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -784,6 +792,7 @@ MonoBehaviour:
   player3: {fileID: 0}
   player4: {fileID: 0}
   powerUp: {fileID: 0}
+  collectSFX: {fileID: 8300000, guid: 9ff2cbf2c536e4cb9a7f305d2c7bfbcd, type: 3}
 --- !u!1 &508257528
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,6 +889,7 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  collectSFX: {fileID: 8300000, guid: 9ff2cbf2c536e4cb9a7f305d2c7bfbcd, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,6 +1130,8 @@ MonoBehaviour:
   LeftTileScript: {fileID: 0}
   jewel: 0
   powerUps: []
+  jumpSFX: {fileID: 8300000, guid: 0c5215ed6103041fca2638d41884b45c, type: 3}
+  landedSFX: {fileID: 8300000, guid: dc93220acf7db4492921432cad3f45bd, type: 3}
 --- !u!1001 &805672954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1359,6 +1371,7 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  collectSFX: {fileID: 8300000, guid: 9ff2cbf2c536e4cb9a7f305d2c7bfbcd, type: 3}
 --- !u!1001 &1141917081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1416,6 +1429,79 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
+--- !u!1001 &1153125188
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 38542481, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 784939497, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 829949565, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404847390, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591885566062112536, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591885566062112536, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 63.509007
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591885566062112536, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 576.5145
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591885566062112536, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.2922566
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591885566062112536, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591885566062112536, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591885566062112536, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591885566062112536, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591885566062112536, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591885566062112536, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591885566062112536, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591885566062112542, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 84324b65dae934d8b9e39852dc821db3, type: 3}
 --- !u!1001 &1178655722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1743,6 +1829,7 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  collectSFX: {fileID: 8300000, guid: 9ff2cbf2c536e4cb9a7f305d2c7bfbcd, type: 3}
 --- !u!1 &1821020416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,6 +1961,8 @@ MonoBehaviour:
   GameController: {fileID: 0}
   jewel: 0
   powerUps: []
+  jumpSFX: {fileID: 8300000, guid: 0c5215ed6103041fca2638d41884b45c, type: 3}
+  landedSFX: {fileID: 8300000, guid: dc93220acf7db4492921432cad3f45bd, type: 3}
 --- !u!54 &1821020422
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2046,6 +2135,7 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  collectSFX: {fileID: 8300000, guid: 9ff2cbf2c536e4cb9a7f305d2c7bfbcd, type: 3}
 --- !u!1 &1921768957 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -2088,6 +2178,7 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  collectSFX: {fileID: 8300000, guid: 9ff2cbf2c536e4cb9a7f305d2c7bfbcd, type: 3}
 --- !u!1 &1960334046 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -2130,6 +2221,7 @@ MonoBehaviour:
   player3: {fileID: 0}
   player4: {fileID: 0}
   powerUp: {fileID: 0}
+  collectSFX: {fileID: 8300000, guid: 9ff2cbf2c536e4cb9a7f305d2c7bfbcd, type: 3}
 --- !u!1 &1979566410 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -2172,6 +2264,7 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  collectSFX: {fileID: 8300000, guid: 9ff2cbf2c536e4cb9a7f305d2c7bfbcd, type: 3}
 --- !u!1001 &2020508321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2271,3 +2364,4 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  collectSFX: {fileID: 8300000, guid: 9ff2cbf2c536e4cb9a7f305d2c7bfbcd, type: 3}

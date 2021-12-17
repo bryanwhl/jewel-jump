@@ -26,6 +26,9 @@ public class Player4 : MonoBehaviour
     public Tile LeftTileScript;
     public int jewel;
     public List<PowerUp> powerUps;
+    public AudioClip jumpSFX;
+    public AudioClip landedSFX;
+    public CharacterAnimationManager animationManager;
 
     void Start()
     {
@@ -50,6 +53,8 @@ public class Player4 : MonoBehaviour
         LeftTileScript = LeftTile.GetComponent<Tile>();
         jewel = 0;
         powerUps = new List<PowerUp>();
+
+        animationManager = GetComponentInChildren<CharacterAnimationManager>();
     }
 
     // Update is called once per frame
@@ -58,6 +63,9 @@ public class Player4 : MonoBehaviour
         Vector3 center = new Vector3(0, 0, 0);
         if (GameController.areAllInputsIn == true)
         {
+            AudioManager.instance.PlayPlayerSFX(jumpSFX, 4);
+            animationManager.Jump();
+
             if (GameController.Player4Flag == 1)
             {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * 5 + NorthWestTile.transform.position - transform.position, ForceMode.VelocityChange);
@@ -80,5 +88,14 @@ public class Player4 : MonoBehaviour
             }
             GameController.Player4Flag = 0;
         }
+    }
+    
+    public void SetReady() {
+        animationManager.Ready();
+    }
+    private void OnCollisionEnter(Collision other) {
+        Debug.Log("Landed");
+        AudioManager.instance.PlayPlayerSFX(landedSFX, 4);
+        animationManager.Land();
     }
 }

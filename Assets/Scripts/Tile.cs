@@ -13,6 +13,8 @@ public class Tile : MonoBehaviour
     public Player3 player3;
     public Player4 player4;
     [SerializeField] PowerUp powerUp;
+
+    public AudioClip collectSFX;
     public PowerUp PowerUp
     {
         get { return powerUp; }
@@ -42,6 +44,8 @@ public class Tile : MonoBehaviour
                 // Debug.Log(player1.jewel);
                 if ((int)playersJumpingHere[0] == 1)
                 {
+                    AudioManager.instance.PlayGameSFX(collectSFX);
+
                     if (powerUp != null)
                     {
                         ObtainPowerup(player1, powerUp);
@@ -169,6 +173,8 @@ public class Tile : MonoBehaviour
             }
             else
             {
+                // Bumping Trigger
+
                 List<PowerUp> toBeRemoved1 = new List<PowerUp>();
                 List<PowerUp> toBeRemoved2 = new List<PowerUp>();
                 List<PowerUp> toBeRemoved3 = new List<PowerUp>();
@@ -495,6 +501,10 @@ public class Tile : MonoBehaviour
     //function for each player.
     void ObtainPowerup(Player1 player, PowerUp powerUp)
     {
+        Debug.Log("HEre");
+        Debug.Log(powerUp);
+        Debug.Log(powerUp.Base);
+        Debug.Log(powerUp.Base.WhenToApply);
         // Effects must be applied now (e.g. double all coins, half all coins)
         Debug.Log(powerUp.Base.WhenToApply);
         Debug.Log(WhenToApplyEffect.StartingNow);

@@ -5,7 +5,6 @@ using UnityEngine;
 public class CharacterAnimationManager : MonoBehaviour
 {
     Animator animator;
-    public bool jumping;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,14 +14,21 @@ public class CharacterAnimationManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) {
-            if(jumping) {
-                animator.SetTrigger("Landed");
-                jumping = false;
-            } else {
-                animator.SetTrigger("Jump");
-                jumping = true;
-            }
-        }
+
+    }
+
+    public void Ready() {
+        animator.SetTrigger("Ready");
+        animator.ResetTrigger("Jump");
+        animator.ResetTrigger("Landed");
+    }
+
+    public void Jump() {
+        animator.SetTrigger("Jump");
+        animator.ResetTrigger("Landed");
+    }
+
+    public void Land() {
+        animator.SetTrigger("Landed");
     }
 }
