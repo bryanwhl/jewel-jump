@@ -25,7 +25,7 @@ public class Player3 : MonoBehaviour
     public Tile BottomTileScript;
     public Tile LeftTileScript;
     public int jewel;
-    public List<PowerUp> powerUps;
+    public List<PowerUpBase> powerUps;
 
     void Start()
     {

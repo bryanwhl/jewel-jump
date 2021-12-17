@@ -20,20 +20,20 @@ public class GameController : MonoBehaviour
     public static bool Player2CoinSettled;
     public static bool Player3CoinSettled;
     public static bool Player4CoinSettled;
-    [SerializeField] List<PowerUpBase> spawnablePowerUps;
+    public static int numToSpawnPowerUp;
 
     void resetAllInputsIn()
     {
         isAnimationComplete = true;
     }
 
-    //Comments by Bing Sen
+    // Comments by Bing Sen
     // I dunno where you start every round, but when u start everyone and for example, want to put a PowerUp at CentreTile
     // Make sure you do somewehere CentreTile.powerUp = new PowerUp(PowerUpBase theBaseTemplate)
-    //And then CentreTile.powerUp.gameObject.SetActive(true);
+    // And then CentreTile.powerUp.gameObject.SetActive(true);
     // You can obtain theBaseTemplate by taking a random PowerUpBase in the list above (the varaible named spawnablePowerUps);
     // If no powerUp on CentreTile then make sure you set CentreTile.powerUp = null;
-    //And then CentreTile.powerUp.gameObject.SetActive(false);
+    // And then CentreTile.powerUp.gameObject.SetActive(false);
 
     void Start()
     {
@@ -48,6 +48,7 @@ public class GameController : MonoBehaviour
         Player2CoinSettled = false;
         Player3CoinSettled = false;
         Player4CoinSettled = false;
+        numToSpawnPowerUp = (int)Random.Range(1.0f, 10.0f);
     }
 
     // Update is called once per frame
@@ -165,6 +166,7 @@ public class GameController : MonoBehaviour
                 Player2CoinSettled = false;
                 Player3CoinSettled = false;
                 Player4CoinSettled = false;
+                numToSpawnPowerUp = (int)Random.Range(1.0f, 10.0f);
                 round++;
             }
         }

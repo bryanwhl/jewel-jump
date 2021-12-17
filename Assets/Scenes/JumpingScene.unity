@@ -369,6 +369,14 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  spawnablePowerUps:
+  - {fileID: 11400000, guid: 7da928a5dd701eb43bbe6c3726dc179a, type: 2}
+  - {fileID: 11400000, guid: f74a6557ca2600341b82a8bfb8a7d28f, type: 2}
+  - {fileID: 11400000, guid: 7db4ba7fea5c14a4eb138ffaf66b1212, type: 2}
+  - {fileID: 11400000, guid: 73c958a2bc0902b459f209f5ea5738fd, type: 2}
+  - {fileID: 11400000, guid: 2f8ab757516e62247a03e7478827f3c1, type: 2}
+  - {fileID: 11400000, guid: 017e23a8724989f4987b122db71cef06, type: 2}
+  tileNum: 6
 --- !u!1 &334653133 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -411,6 +419,8 @@ MonoBehaviour:
   player3: {fileID: 0}
   player4: {fileID: 0}
   powerUp: {fileID: 0}
+  spawnablePowerUps: []
+  tileNum: 0
 --- !u!1 &372970928 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -453,6 +463,14 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  spawnablePowerUps:
+  - {fileID: 11400000, guid: 7da928a5dd701eb43bbe6c3726dc179a, type: 2}
+  - {fileID: 11400000, guid: f74a6557ca2600341b82a8bfb8a7d28f, type: 2}
+  - {fileID: 11400000, guid: 7db4ba7fea5c14a4eb138ffaf66b1212, type: 2}
+  - {fileID: 11400000, guid: 73c958a2bc0902b459f209f5ea5738fd, type: 2}
+  - {fileID: 11400000, guid: 2f8ab757516e62247a03e7478827f3c1, type: 2}
+  - {fileID: 11400000, guid: 017e23a8724989f4987b122db71cef06, type: 2}
+  tileNum: 4
 --- !u!1001 &476691956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -742,6 +760,8 @@ MonoBehaviour:
   player3: {fileID: 0}
   player4: {fileID: 0}
   powerUp: {fileID: 0}
+  spawnablePowerUps: []
+  tileNum: 0
 --- !u!1 &500811730 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -784,6 +804,8 @@ MonoBehaviour:
   player3: {fileID: 0}
   player4: {fileID: 0}
   powerUp: {fileID: 0}
+  spawnablePowerUps: []
+  tileNum: 0
 --- !u!1 &508257528
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,13 +839,6 @@ MonoBehaviour:
   Player2: {fileID: 1821020416}
   Player3: {fileID: 741887398}
   Player4: {fileID: 481473857}
-  spawnablePowerUps:
-  - {fileID: 11400000, guid: 7da928a5dd701eb43bbe6c3726dc179a, type: 2}
-  - {fileID: 11400000, guid: f74a6557ca2600341b82a8bfb8a7d28f, type: 2}
-  - {fileID: 11400000, guid: 7db4ba7fea5c14a4eb138ffaf66b1212, type: 2}
-  - {fileID: 11400000, guid: 73c958a2bc0902b459f209f5ea5738fd, type: 2}
-  - {fileID: 11400000, guid: 2f8ab757516e62247a03e7478827f3c1, type: 2}
-  - {fileID: 11400000, guid: 017e23a8724989f4987b122db71cef06, type: 2}
 --- !u!4 &508257530
 Transform:
   m_ObjectHideFlags: 0
@@ -880,6 +895,14 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  spawnablePowerUps:
+  - {fileID: 11400000, guid: 7da928a5dd701eb43bbe6c3726dc179a, type: 2}
+  - {fileID: 11400000, guid: f74a6557ca2600341b82a8bfb8a7d28f, type: 2}
+  - {fileID: 11400000, guid: 7db4ba7fea5c14a4eb138ffaf66b1212, type: 2}
+  - {fileID: 11400000, guid: 73c958a2bc0902b459f209f5ea5738fd, type: 2}
+  - {fileID: 11400000, guid: 2f8ab757516e62247a03e7478827f3c1, type: 2}
+  - {fileID: 11400000, guid: 017e23a8724989f4987b122db71cef06, type: 2}
+  tileNum: 5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,6 +1382,14 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  spawnablePowerUps:
+  - {fileID: 11400000, guid: 7da928a5dd701eb43bbe6c3726dc179a, type: 2}
+  - {fileID: 11400000, guid: f74a6557ca2600341b82a8bfb8a7d28f, type: 2}
+  - {fileID: 11400000, guid: 7db4ba7fea5c14a4eb138ffaf66b1212, type: 2}
+  - {fileID: 11400000, guid: 73c958a2bc0902b459f209f5ea5738fd, type: 2}
+  - {fileID: 11400000, guid: 2f8ab757516e62247a03e7478827f3c1, type: 2}
+  - {fileID: 11400000, guid: 017e23a8724989f4987b122db71cef06, type: 2}
+  tileNum: 9
 --- !u!1001 &1141917081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1743,6 +1774,14 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  spawnablePowerUps:
+  - {fileID: 11400000, guid: 7da928a5dd701eb43bbe6c3726dc179a, type: 2}
+  - {fileID: 11400000, guid: f74a6557ca2600341b82a8bfb8a7d28f, type: 2}
+  - {fileID: 11400000, guid: 7db4ba7fea5c14a4eb138ffaf66b1212, type: 2}
+  - {fileID: 11400000, guid: 73c958a2bc0902b459f209f5ea5738fd, type: 2}
+  - {fileID: 11400000, guid: 2f8ab757516e62247a03e7478827f3c1, type: 2}
+  - {fileID: 11400000, guid: 017e23a8724989f4987b122db71cef06, type: 2}
+  tileNum: 8
 --- !u!1 &1821020416
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,6 +2085,14 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  spawnablePowerUps:
+  - {fileID: 11400000, guid: 7da928a5dd701eb43bbe6c3726dc179a, type: 2}
+  - {fileID: 11400000, guid: f74a6557ca2600341b82a8bfb8a7d28f, type: 2}
+  - {fileID: 11400000, guid: 7db4ba7fea5c14a4eb138ffaf66b1212, type: 2}
+  - {fileID: 11400000, guid: 73c958a2bc0902b459f209f5ea5738fd, type: 2}
+  - {fileID: 11400000, guid: 2f8ab757516e62247a03e7478827f3c1, type: 2}
+  - {fileID: 11400000, guid: 017e23a8724989f4987b122db71cef06, type: 2}
+  tileNum: 3
 --- !u!1 &1921768957 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -2088,6 +2135,14 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  spawnablePowerUps:
+  - {fileID: 11400000, guid: 7da928a5dd701eb43bbe6c3726dc179a, type: 2}
+  - {fileID: 11400000, guid: f74a6557ca2600341b82a8bfb8a7d28f, type: 2}
+  - {fileID: 11400000, guid: 7db4ba7fea5c14a4eb138ffaf66b1212, type: 2}
+  - {fileID: 11400000, guid: 73c958a2bc0902b459f209f5ea5738fd, type: 2}
+  - {fileID: 11400000, guid: 2f8ab757516e62247a03e7478827f3c1, type: 2}
+  - {fileID: 11400000, guid: 017e23a8724989f4987b122db71cef06, type: 2}
+  tileNum: 7
 --- !u!1 &1960334046 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -2130,6 +2185,8 @@ MonoBehaviour:
   player3: {fileID: 0}
   player4: {fileID: 0}
   powerUp: {fileID: 0}
+  spawnablePowerUps: []
+  tileNum: 0
 --- !u!1 &1979566410 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
@@ -2172,6 +2229,14 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  spawnablePowerUps:
+  - {fileID: 11400000, guid: 7da928a5dd701eb43bbe6c3726dc179a, type: 2}
+  - {fileID: 11400000, guid: f74a6557ca2600341b82a8bfb8a7d28f, type: 2}
+  - {fileID: 11400000, guid: 7db4ba7fea5c14a4eb138ffaf66b1212, type: 2}
+  - {fileID: 11400000, guid: 73c958a2bc0902b459f209f5ea5738fd, type: 2}
+  - {fileID: 11400000, guid: 2f8ab757516e62247a03e7478827f3c1, type: 2}
+  - {fileID: 11400000, guid: 017e23a8724989f4987b122db71cef06, type: 2}
+  tileNum: 1
 --- !u!1001 &2020508321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2271,3 +2336,11 @@ MonoBehaviour:
   player3: {fileID: 741887404}
   player4: {fileID: 481473863}
   powerUp: {fileID: 0}
+  spawnablePowerUps:
+  - {fileID: 11400000, guid: 7da928a5dd701eb43bbe6c3726dc179a, type: 2}
+  - {fileID: 11400000, guid: f74a6557ca2600341b82a8bfb8a7d28f, type: 2}
+  - {fileID: 11400000, guid: 7db4ba7fea5c14a4eb138ffaf66b1212, type: 2}
+  - {fileID: 11400000, guid: 73c958a2bc0902b459f209f5ea5738fd, type: 2}
+  - {fileID: 11400000, guid: 2f8ab757516e62247a03e7478827f3c1, type: 2}
+  - {fileID: 11400000, guid: 017e23a8724989f4987b122db71cef06, type: 2}
+  tileNum: 2

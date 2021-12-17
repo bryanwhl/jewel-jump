@@ -9,12 +9,14 @@ public class JewelList : MonoBehaviour
     public int numJewels;
     GameController GameController;
     private bool setFlag;
+    public bool isPowerUpTurn;
 
     void Start()
     {
         InitJewels();
         SetNumber((int)Random.Range(0.0f, 3.0f) + GameController.round);
         setFlag = true;
+        isPowerUpTurn = false;
     }
 
     public void InitJewels()
@@ -97,7 +99,7 @@ public class JewelList : MonoBehaviour
         {
             setFlag = true;
         }
-        if (GameController.isAnimationComplete == true && GameController.Player1CoinSettled == true && GameController.Player2CoinSettled == true && GameController.Player3CoinSettled == true && GameController.Player4CoinSettled == true && setFlag == true)
+        if (isPowerUpTurn == false && GameController.isAnimationComplete == true && GameController.Player1CoinSettled == true && GameController.Player2CoinSettled == true && GameController.Player3CoinSettled == true && GameController.Player4CoinSettled == true && setFlag == true)
         {
             SetNumber((int)Random.Range(0.0f, 3.0f) + GameController.round);
             setFlag = false;
