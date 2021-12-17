@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameUI : MonoBehaviour
+public class ScoreboardUI : MonoBehaviour
 {
-    public GameObject gameOverScreen;
+    public string gameScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +18,11 @@ public class GameUI : MonoBehaviour
         
     }
 
-    public void Exit() {
-        SceneManager.LoadScene("MainMenu");
+    public void PlayAgain() {
+        SceneManager.LoadScene(gameScene);
     }
 
-    public void TriggerGameOver() {
-        gameOverScreen.SetActive(true);
+    public void Quit() {
+        Application.Quit();
     }
 }

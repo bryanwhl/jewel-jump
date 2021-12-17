@@ -30,5 +30,7 @@ public class CharacterAnimationManager : MonoBehaviour
 
     public void Land() {
         animator.SetTrigger("Landed");
+        animator.ResetTrigger("Ready");
+        animator.ResetTrigger("Jump");
     }
 }
