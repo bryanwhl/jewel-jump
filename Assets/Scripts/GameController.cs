@@ -43,16 +43,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Player1Flag);
-        Debug.Log(Player2Flag);
-        Debug.Log(Player3Flag);
-        Debug.Log(Player4Flag);
-        Debug.Log(isAnimationComplete);
-        Debug.Log(areAllInputsIn);
-        Debug.Log(Player1CoinSettled);
-        Debug.Log(Player2CoinSettled);
-        Debug.Log(Player3CoinSettled);
-        Debug.Log(Player4CoinSettled);
+        Debug.Log(round);
         Debug.Log("=================");
         if (round <= 10 && areAllInputsIn == false) {
             // Inputs for player 1
@@ -117,6 +108,7 @@ public class GameController : MonoBehaviour
                 Player2CoinSettled = false;
                 Player3CoinSettled = false;
                 Player4CoinSettled = false;
+                round++;
             }
         }
     }

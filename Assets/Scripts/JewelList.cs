@@ -7,11 +7,14 @@ public class JewelList : MonoBehaviour
     List<Jewel> jewelList;
     [SerializeField] Jewel jewelPrefab;
     public int numJewels;
+    GameController GameController;
+    private bool setFlag;
 
     void Start()
     {
         InitJewels();
-        SetNumber(9);
+        SetNumber((int)Random.Range(0.0f, 3.0f) + GameController.round);
+        setFlag = true;
     }
 
     public void InitJewels()
@@ -86,5 +89,16 @@ public class JewelList : MonoBehaviour
     public int NumJewels
     {
         get { return numJewels; }
+    }
+
+    void Update()
+    {
+        if (GameController.areAllInputsIn == true) {
+            setFlag = true;
+        }
+        if (GameController.isAnimationComplete == true && GameController.Player1CoinSettled == true && GameController.Player2CoinSettled == true && GameController.Player3CoinSettled == true && GameController.Player4CoinSettled == true && setFlag == true) {
+            SetNumber((int)Random.Range(0.0f, 3.0f) + GameController.round);
+            setFlag = false;
+        }
     }
 }
