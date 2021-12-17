@@ -138,7 +138,7 @@ public class Tile : MonoBehaviour
                     //if there is powerUp on this tile to be obtained
                     if (powerUp != null)
                     {
-                        ObtainPowerup(player3, powerUp);
+                        ObtainPowerup(player4, powerUp);
                         powerUp = null;
                     }
                     int jewelsObtained = jewels.NumJewels;
@@ -165,7 +165,7 @@ public class Tile : MonoBehaviour
                     Debug.Log($"player4 now has {player4.jewel} golds");
                 }
                 jewels.DestroyAllJewels();
-                powerUp.gameObject.SetActive(false); // "destroy" the powerUp object on screen
+                // powerUp.gameObject.SetActive(false); // "destroy" the powerUp object on screen
             }
             else
             {
@@ -178,12 +178,10 @@ public class Tile : MonoBehaviour
                 {
                     for (int affectedPlayer = 0; affectedPlayer < playersJumpingHere.Count; affectedPlayer++)
                     {
-                        //
                         if (affectedPlayer != powerUpPlayer)
                         {
                             if ((int)playersJumpingHere[powerUpPlayer] == 1)
                             {
-
                                 //apply player 1's powerup effects (e.g. knock off) to the affectedPlayer
                                 if ((int)playersJumpingHere[affectedPlayer] == 2)
                                 {
@@ -498,6 +496,8 @@ public class Tile : MonoBehaviour
     void ObtainPowerup(Player1 player, PowerUp powerUp)
     {
         // Effects must be applied now (e.g. double all coins, half all coins)
+        Debug.Log(powerUp.Base.WhenToApply);
+        Debug.Log(WhenToApplyEffect.StartingNow);
         if (powerUp.Base.WhenToApply == WhenToApplyEffect.StartingNow)
         {
             Effects effect = EffectsDB.Effects[powerUp.Base.Effect.Id]; //get effect of this powerup
@@ -512,6 +512,8 @@ public class Tile : MonoBehaviour
     void ObtainPowerup(Player2 player, PowerUp powerUp)
     {
         // Effects must be applied now (e.g. double all coins, half all coins)
+        Debug.Log(powerUp.Base.WhenToApply);
+        Debug.Log(WhenToApplyEffect.StartingNow);
         if (powerUp.Base.WhenToApply == WhenToApplyEffect.StartingNow)
         {
             Effects effect = EffectsDB.Effects[powerUp.Base.Effect.Id]; //get effect of this powerup
@@ -526,6 +528,8 @@ public class Tile : MonoBehaviour
     void ObtainPowerup(Player3 player, PowerUp powerUp)
     {
         // Effects must be applied now (e.g. double all coins, half all coins)
+        Debug.Log(powerUp.Base.WhenToApply);
+        Debug.Log(WhenToApplyEffect.StartingNow);
         if (powerUp.Base.WhenToApply == WhenToApplyEffect.StartingNow)
         {
             Effects effect = EffectsDB.Effects[powerUp.Base.Effect.Id]; //get effect of this powerup
@@ -540,6 +544,8 @@ public class Tile : MonoBehaviour
     void ObtainPowerup(Player4 player, PowerUp powerUp)
     {
         // Effects must be applied now (e.g. double all coins, half all coins)
+        Debug.Log(powerUp.Base.WhenToApply);
+        Debug.Log(WhenToApplyEffect.StartingNow);
         if (powerUp.Base.WhenToApply == WhenToApplyEffect.StartingNow)
         {
             Effects effect = EffectsDB.Effects[powerUp.Base.Effect.Id]; //get effect of this powerup
