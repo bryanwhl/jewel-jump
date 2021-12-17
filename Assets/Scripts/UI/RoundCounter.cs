@@ -16,6 +16,10 @@ public class RoundCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "Round " + GameController.round + " / 10";
+        if(GameController.round <= 10) {
+            text.text = "Round " + GameController.round + " / 10";
+        } else {
+            text.text = "Game Over!";
+        }
     }
 }

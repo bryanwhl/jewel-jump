@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameUI : MonoBehaviour
 {
     public GameObject gameOverScreen;
+    public AudioClip gameOverMusic;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +25,6 @@ public class GameUI : MonoBehaviour
 
     public void TriggerGameOver() {
         gameOverScreen.SetActive(true);
+        AudioManager.instance.PlayMusic(gameOverMusic);
     }
 }

@@ -466,6 +466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverScreen: {fileID: 3067527276022752222}
+  gameOverMusic: {fileID: 8300000, guid: 41d48e369d6794c1bae4e7d3826b7501, type: 3}
 --- !u!1 &3067527277641613058
 GameObject:
   m_ObjectHideFlags: 0

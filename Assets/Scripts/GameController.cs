@@ -163,7 +163,7 @@ public class GameController : MonoBehaviour
             }
         }
 
-        if(round > 10) {
+        if(round > 10 && !isGameOver) {
             isGameOver = true;
             GameUI.TriggerGameOver();
         }
