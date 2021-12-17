@@ -26,6 +26,11 @@ public class Player2 : MonoBehaviour
     public GameController GameController;
     public int jewel;
     public List<PowerUpBase> powerUps;
+    public AudioClip jumpSFX;
+    public AudioClip landedSFX;
+    public AudioClip readySFX;
+
+    public CharacterAnimationManager animationManager;
 
     void Start()
     {
@@ -50,6 +55,8 @@ public class Player2 : MonoBehaviour
         LeftTileScript = LeftTile.GetComponent<Tile>();
         jewel = 0;
         powerUps = new List<PowerUp>();
+
+        animationManager = GetComponentInChildren<CharacterAnimationManager>();
     }
 
     // Update is called once per frame
@@ -58,6 +65,9 @@ public class Player2 : MonoBehaviour
         Vector3 center = new Vector3(0, 0, 0);
         if (GameController.areAllInputsIn == true)
         {
+            AudioManager.instance.PlayPlayerSFX(jumpSFX, 2);
+            animationManager.Jump();
+
             if (GameController.Player2Flag == 1)
             {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * 5 + NorthEastTile.transform.position - transform.position, ForceMode.VelocityChange);
@@ -80,5 +90,27 @@ public class Player2 : MonoBehaviour
             }
             GameController.Player2Flag = 0;
         }
+
+        Vector3 vel = GetComponent<Rigidbody>().velocity;
+        if(vel.sqrMagnitude > 0) {
+            Vector3 lookTarget = new Vector3(transform.position.x + vel.x, transform.position.y, transform.position.z + vel.z);
+            transform.LookAt(lookTarget);
+        }
+    }
+
+    public void Reset() {
+        transform.position = new Vector3(1, 0.5f, 0);
+        transform.rotation = Quaternion.Euler(0, -90, 0);
+    }
+
+    public void SetReady() {
+        animationManager.Ready();
+        AudioManager.instance.PlayPlayerSFX(readySFX, 2);
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        Debug.Log("Landed");
+        AudioManager.instance.PlayPlayerSFX(landedSFX, 2);
+        animationManager.Land();
     }
 }

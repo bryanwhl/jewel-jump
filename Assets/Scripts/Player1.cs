@@ -26,6 +26,11 @@ public class Player1 : MonoBehaviour
     public GameController GameController;
     public int jewel;
     public List<PowerUpBase> powerUps;
+    public AudioClip jumpSFX;
+    public AudioClip landedSFX;
+    public AudioClip readySFX;
+
+    public CharacterAnimationManager animationManager;
 
     void Start()
     {
@@ -50,6 +55,8 @@ public class Player1 : MonoBehaviour
         LeftTileScript = LeftTile.GetComponent<Tile>();
         jewel = 0;
         powerUps = new List<PowerUp>();
+
+        animationManager = GetComponentInChildren<CharacterAnimationManager>();
     }
 
     // Update is called once per frame
@@ -58,6 +65,10 @@ public class Player1 : MonoBehaviour
         Vector3 center = new Vector3(0, 0, 0);
         if (GameController.areAllInputsIn == true)
         {
+            // Jump Triggered
+            AudioManager.instance.PlayPlayerSFX(jumpSFX, 1);
+            animationManager.Jump();
+
             if (GameController.Player1Flag == 1)
             {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * 5 + TopTile.transform.position - transform.position, ForceMode.VelocityChange);
@@ -80,5 +91,27 @@ public class Player1 : MonoBehaviour
             }
             GameController.Player1Flag = 0;
         }
+        
+        Vector3 vel = GetComponent<Rigidbody>().velocity;
+        if(vel.sqrMagnitude > 0) {
+            Vector3 lookTarget = new Vector3(transform.position.x + vel.x, transform.position.y, transform.position.z + vel.z);
+            transform.LookAt(lookTarget);
+        }
+    }
+
+    public void Reset() {
+        transform.position = new Vector3(0, 0.5f, 1);
+        transform.rotation = Quaternion.Euler(0, 180, 0);
+    }
+
+    public void SetReady() {
+        animationManager.Ready();
+        AudioManager.instance.PlayPlayerSFX(readySFX, 1);
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        Debug.Log("Landed");
+        AudioManager.instance.PlayPlayerSFX(landedSFX, 1);
+        animationManager.Land();
     }
 }

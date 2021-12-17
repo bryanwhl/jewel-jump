@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource uiSource;
     public AudioSource musicSource;
 
+    public List<AudioSource> playerSources;
+
     void Awake() {
         DontDestroyOnLoad(gameObject);
         if(instance == null) {
@@ -65,5 +67,11 @@ public class AudioManager : MonoBehaviour
     public void PlayMusic(AudioClip clip) {
         musicSource.clip = clip;
         PlayIfUnmuted(musicSource);
+    }
+
+    public void PlayPlayerSFX(AudioClip clip, int player) {
+        AudioSource playerSource = playerSources[player - 1];
+        playerSource.clip = clip;
+        PlayIfUnmuted(playerSource);
     }
 }

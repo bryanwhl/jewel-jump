@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
+    public GameObject gameOverScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class GameUI : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void ToggleMute() {
-        
+    public void TriggerGameOver() {
+        gameOverScreen.SetActive(true);
     }
 }

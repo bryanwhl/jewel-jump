@@ -15,6 +15,14 @@ public class Tile : MonoBehaviour
     [SerializeField] PowerUpBase powerUpBase;
     [SerializeField] List<PowerUpBase> spawnablePowerUps;
     public int tileNum;
+    [SerializeField] PowerUp powerUp;
+
+    public AudioClip collectSFX;
+    public PowerUp PowerUp
+    {
+        get { return powerUp; }
+        set { this.powerUp = value; }
+    } //remember to set this powerup every round if you want to have a powerup on this tile
 
     void Start()
     {
@@ -47,7 +55,9 @@ public class Tile : MonoBehaviour
                 // Debug.Log(player1.jewel);
                 if ((int)playersJumpingHere[0] == 1)
                 {
-                    if (powerUpBase != null)
+                    AudioManager.instance.PlayGameSFX(collectSFX);
+
+                    if (powerUp != null)
                     {
                         ObtainPowerup1(player1, powerUpBase);
                         powerUpBase = null;
@@ -500,6 +510,10 @@ public class Tile : MonoBehaviour
     //function for each player.
     void ObtainPowerup1(Player1 player, PowerUpBase powerUpBase)
     {
+        Debug.Log("HEre");
+        Debug.Log(powerUp);
+        Debug.Log(powerUp.Base);
+        Debug.Log(powerUp.Base.WhenToApply);
         // Effects must be applied now (e.g. double all coins, half all coins)
         Debug.Log(powerUpBase.WhenToApply);
         Debug.Log(WhenToApplyEffect.StartingNow);
