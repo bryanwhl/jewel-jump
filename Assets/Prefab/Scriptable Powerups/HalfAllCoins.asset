@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90d5a583952e85448360ba6cf8270ef, type: 3}
   m_Name: HalfAllCoins
   m_EditorClassIdentifier: 
-  powerupName: HalfAllCoins
-  description: Halfs the number of coins of this player now. Taking floor if the
-    half is not integer.
+  powerupName: Half All Coins
+  description: Halves the number of coins that the player have.
   lastingTurns: 1
   effect:
     effectId: 6

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90d5a583952e85448360ba6cf8270ef, type: 3}
   m_Name: KnockOffTwo
   m_EditorClassIdentifier: 
-  powerupName: KnockOffTwo
-  description: In the next round, this player knocks off 2 coins from anyone he bumps
-    into
+  powerupName: Knock Off Two
+  description: In the next round, this player knocks off 2 coins from any other player
+    he bumps into
   lastingTurns: 1
   effect:
     effectId: 3

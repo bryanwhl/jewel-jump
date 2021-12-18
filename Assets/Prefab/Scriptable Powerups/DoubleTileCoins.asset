@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90d5a583952e85448360ba6cf8270ef, type: 3}
   m_Name: DoubleTileCoins
   m_EditorClassIdentifier: 
-  powerupName: DoubleTileCoins
-  description: The player gets 2x the number of coins in the next round.
+  powerupName: Double Tile Coins
+  description: The player gets double the number of coins for the next round.
   lastingTurns: 1
   effect:
     effectId: 1

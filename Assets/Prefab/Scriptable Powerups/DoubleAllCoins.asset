@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90d5a583952e85448360ba6cf8270ef, type: 3}
   m_Name: DoubleAllCoins
   m_EditorClassIdentifier: 
-  powerupName: DoubleAllCoins
-  description: Doubles all the coins of this player.
+  powerupName: Double All Coins
+  description: Doubles the total number of coins that the player currently have.
   lastingTurns: 1
   effect:
     effectId: 5
