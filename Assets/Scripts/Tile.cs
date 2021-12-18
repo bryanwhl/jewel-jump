@@ -54,11 +54,10 @@ public class Tile : MonoBehaviour
             powerUp.SetPowerUp(powerUpChosen);
 
             GameController.numToSpawnPowerUp = -1;
-        } else {
-            jewels.isPowerUpTurn = false;
         }
         if (GameController.isAnimationComplete == true)
         {
+            jewels.isPowerUpTurn = false;
             if (playersJumpingHere.Count == 1)
             {
                 // Debug.Log("Player 1 Jewel: ");

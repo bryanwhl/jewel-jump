@@ -104,5 +104,8 @@ public class JewelList : MonoBehaviour
             SetNumber((int)Random.Range(0.0f, 3.0f) + GameController.round);
             setFlag = false;
         }
+        if (isPowerUpTurn == true) {
+            DestroyAllJewels();
+        }
     }
 }
