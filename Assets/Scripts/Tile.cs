@@ -18,6 +18,8 @@ public class Tile : MonoBehaviour
 
     public AudioClip collectSFX;
     public GameUI gameUI;
+    public GameObject powerupPrefab;
+    public Transform powerupSpawn;
     public PowerUp PowerUp
     {
         get { return powerUp; }
@@ -28,6 +30,7 @@ public class Tile : MonoBehaviour
     {
         jewels = Instantiate(jewelListPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
         gameUI = GameObject.Find("GameUI").GetComponent<GameUI>();
+        powerupSpawn = transform.Find("PowerupSpawn");
         // jewels = new JewelList();
     }
 
@@ -44,9 +47,13 @@ public class Tile : MonoBehaviour
             jewels.isPowerUpTurn = true;
             PowerUpBase powerUpChosen = spawnablePowerUps[(int)Random.Range(0.0f, 5.99f)];
             
+            // powerUp.SetPowerUp(powerUpChosen);
+            // powerUp.gameObject.SetActive(true);
+            GameObject newPowerup = Instantiate(powerupPrefab, powerupSpawn) as GameObject;
+            powerUp = newPowerup.GetComponent<PowerUp>();
             powerUp.SetPowerUp(powerUpChosen);
-            powerUp.gameObject.SetActive(true);
-            
+
+            GameController.numToSpawnPowerUp = -1;
         } else {
             jewels.isPowerUpTurn = false;
             powerUp = null;
@@ -64,7 +71,6 @@ public class Tile : MonoBehaviour
                     if (powerUp != null)
                     {
                         ObtainPowerup1(player1, powerUp);
-                        powerUp.Reset();
                     }
                     int jewelsObtained = jewels.NumJewels;
                     List<PowerUp> toBeRemoved = new List<PowerUp>();
@@ -92,10 +98,9 @@ public class Tile : MonoBehaviour
                 }
                 else if ((int)playersJumpingHere[0] == 2)
                 {
-                    if (powerUp.Base != null)
+                    if (powerUp != null)
                     {
                         ObtainPowerup2(player2, powerUp);
-                        powerUp.Reset();
                     }
                     int jewelsObtained = jewels.NumJewels;
                     List<PowerUp> toBeRemoved = new List<PowerUp>();
@@ -123,15 +128,21 @@ public class Tile : MonoBehaviour
                 }
                 else if ((int)playersJumpingHere[0] == 3)
                 {
-                    if (powerUp.Base != null)
+                    if (powerUp != null)
                     {
                         ObtainPowerup3(player3, powerUp);
-                        powerUp.Reset();
                     }
                     int jewelsObtained = jewels.NumJewels;
                     List<PowerUp> toBeRemoved = new List<PowerUp>();
+                    Debug.Log(player3.powerUps.Count);
                     foreach (var playerPowerups in player3.powerUps)
                     { // loop thru powerups that the player has alrdy obtained
+                        // Debug.Log(EffectsDB);
+                        Debug.Log(EffectsDB.Effects);
+                        Debug.Log(playerPowerups);
+                        Debug.Log(playerPowerups.Base);
+                        Debug.Log(playerPowerups.Base.Effect);
+                        Debug.Log(playerPowerups.Base.Effect.Id);
                         Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
                         if (playerPowerups.Base.EffectTarget == EffectTarget.Self)
                         { //if the powerup is meant to target self (e.g. double coins on tile)
@@ -155,10 +166,9 @@ public class Tile : MonoBehaviour
                 else if ((int)playersJumpingHere[0] == 4)
                 {
                     //if there is powerUp on this tile to be obtained
-                    if (powerUp.Base != null)
+                    if (powerUp != null)
                     {
                         ObtainPowerup4(player4, powerUp);
-                        powerUp.Reset();
                     }
                     int jewelsObtained = jewels.NumJewels;
                     List<PowerUp> toBeRemoved = new List<PowerUp>();
@@ -184,7 +194,7 @@ public class Tile : MonoBehaviour
                     Debug.Log($"player4 now has {player4.jewel} golds");
                 }
                 jewels.DestroyAllJewels();
-                powerUp.gameObject.SetActive(false); // "destroy" the powerUp object on screen
+                powerUp?.gameObject.SetActive(false); // "destroy" the powerUp object on screen
             }
             else
             {
@@ -574,13 +584,13 @@ public class Tile : MonoBehaviour
     }
 
     private void OnMouseEnter() {
-        if(powerUp.Base != null) {
+        if(powerUp != null) {
             gameUI.ShowPowerUpTooltip(powerUp.Base);
         }
     }
 
     private void OnMouseExit() {
-        if(powerUp.Base != null) {
+        if(powerUp != null) {
             gameUI.HidePowerUpTooltip();
         }
     }
