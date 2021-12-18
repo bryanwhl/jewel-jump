@@ -211,10 +211,20 @@ public class GameController : MonoBehaviour
             Debug.Log(Player4.GetComponent<Player4>().jewel);
             ArrayList results = new ArrayList();
             results.Add(Player1.GetComponent<Player1>().jewel);
-            results.Add(Player1.GetComponent<Player1>().jewel);
-            results.Add(Player1.GetComponent<Player1>().jewel);
-            results.Add(Player1.GetComponent<Player1>().jewel);
+            results.Add(Player2.GetComponent<Player2>().jewel);
+            results.Add(Player3.GetComponent<Player3>().jewel);
+            results.Add(Player4.GetComponent<Player4>().jewel);
             results.Sort();
+            int jewelNumOfWinner = results[rankThatWins - 1];
+            if (Player1.GetComponent<Player1>().jewel == jewelNumOfWinner) {
+                Debug.Log("Player 1 Wins");
+            } else if (Player2.GetComponent<Player2>().jewel == jewelNumOfWinner) {
+                Debug.Log("Player 2 Wins");
+            } else if (Player3.GetComponent<Player3>().jewel == jewelNumOfWinner) {
+                Debug.Log("Player 3 Wins");
+            } else if (Player4.GetComponent<Player4>().jewel == jewelNumOfWinner) {
+                Debug.Log("Player 4 Wins");
+            }
         }
     }
 }
