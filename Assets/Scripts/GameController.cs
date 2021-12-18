@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     [SerializeField] List<PowerUpBase> spawnablePowerUps;
     public static bool isGameOver = false;
     public GameUI GameUI;
+    public static int rankThatWins;
 
     void resetAllInputsIn()
     {
@@ -52,7 +53,7 @@ public class GameController : MonoBehaviour
         Player3CoinSettled = false;
         Player4CoinSettled = false;
         numToSpawnPowerUp = (int)Random.Range(1.0f, 10.0f);
-
+        rankThatWins = 1;
         GameUI = GameObject.Find("GameUI").GetComponent<GameUI>();
     }
 
@@ -75,7 +76,7 @@ public class GameController : MonoBehaviour
         // Debug.Log(Player3CoinSettled);
         // Debug.Log(Player4CoinSettled);
         Debug.Log("=================");
-        if (round <= 10 && areAllInputsIn == false && !isGameOver)
+        if (round <= 10 && areAllInputsIn == false && !isGameOver && isAnimationComplete == false && Player1CoinSettled == false && Player2CoinSettled == false && Player3CoinSettled == false && Player4CoinSettled == false)
         {
             // Inputs for player 1
             if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -197,7 +198,24 @@ public class GameController : MonoBehaviour
                 Player4CoinSettled = false;
                 numToSpawnPowerUp = (int)Random.Range(1.0f, 10.0f);
                 round++;
+                if (round == 4 || round == 8) {
+                    rankThatWins = (int)Random.Range(1.0f, 4.99f);
+                    // Display UI for change of winner
+                }
             }
+        }
+        if (round == 11) {
+            // Game Ends
+            Debug.Log(Player1.GetComponent<Player1>().jewel);
+            Debug.Log(Player2.GetComponent<Player2>().jewel);
+            Debug.Log(Player3.GetComponent<Player3>().jewel);
+            Debug.Log(Player4.GetComponent<Player4>().jewel);
+            ArrayList results = new ArrayList();
+            results.Add(Player1.GetComponent<Player1>().jewel);
+            results.Add(Player1.GetComponent<Player1>().jewel);
+            results.Add(Player1.GetComponent<Player1>().jewel);
+            results.Add(Player1.GetComponent<Player1>().jewel);
+            results.Sort();
         }
     }
 }
