@@ -52,7 +52,7 @@ MeshRenderer:
   m_GameObject: {fileID: 4312360528238546272}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -128,3 +128,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jewelListPrefab: {fileID: 1120345461512350015, guid: 4991e75de4255364b98c06b851769f47, type: 3}
+  GameController: {fileID: 0}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  player3: {fileID: 0}
+  player4: {fileID: 0}
+  spawnablePowerUps: []
+  tileNum: 0
+  powerUp: {fileID: 0}
+  collectSFX: {fileID: 0}
+  gameUI: {fileID: 0}
+  powerupPrefab: {fileID: 0}
+  powerupSpawn: {fileID: 0}

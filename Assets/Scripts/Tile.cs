@@ -49,7 +49,7 @@ public class Tile : MonoBehaviour
             
             // powerUp.SetPowerUp(powerUpChosen);
             // powerUp.gameObject.SetActive(true);
-            GameObject newPowerup = Instantiate(powerupPrefab, powerupSpawn) as GameObject;
+            GameObject newPowerup = Instantiate(powerupPrefab, powerupSpawn.position, powerupSpawn.rotation) as GameObject;
             powerUp = newPowerup.GetComponent<PowerUp>();
             powerUp.SetPowerUp(powerUpChosen);
 
