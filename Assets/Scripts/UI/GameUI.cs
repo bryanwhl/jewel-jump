@@ -7,6 +7,7 @@ public class GameUI : MonoBehaviour
 {
     public GameObject gameOverScreen;
     public PowerupTooltip powerupTooltip;
+    public RuleChange ruleChangeUI;
     public AudioClip gameOverMusic;
     // Start is called before the first frame update
     void Start()
@@ -36,5 +37,9 @@ public class GameUI : MonoBehaviour
 
     public void HidePowerUpTooltip() {
         powerupTooltip.gameObject.SetActive(false);
+    }
+
+    public void ShowRuleChange() {
+        ruleChangeUI.gameObject.SetActive(true);
     }
 }
