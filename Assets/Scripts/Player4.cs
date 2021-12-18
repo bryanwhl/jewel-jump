@@ -25,7 +25,7 @@ public class Player4 : MonoBehaviour
     public Tile BottomTileScript;
     public Tile LeftTileScript;
     public int jewel;
-    public List<PowerUpBase> powerUps;
+    public List<PowerUp> powerUps;
     public AudioClip jumpSFX;
     public AudioClip landedSFX;
     public AudioClip readySFX;

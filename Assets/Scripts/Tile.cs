@@ -12,12 +12,12 @@ public class Tile : MonoBehaviour
     public Player2 player2;
     public Player3 player3;
     public Player4 player4;
-    [SerializeField] PowerUpBase powerUpBase;
     [SerializeField] List<PowerUpBase> spawnablePowerUps;
     public int tileNum;
     [SerializeField] PowerUp powerUp;
 
     public AudioClip collectSFX;
+    public GameUI gameUI;
     public PowerUp PowerUp
     {
         get { return powerUp; }
@@ -27,6 +27,7 @@ public class Tile : MonoBehaviour
     void Start()
     {
         jewels = Instantiate(jewelListPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+        gameUI = GameObject.Find("GameUI").GetComponent<GameUI>();
         // jewels = new JewelList();
     }
 
@@ -41,8 +42,10 @@ public class Tile : MonoBehaviour
     {
         if (tileNum == GameController.numToSpawnPowerUp) {
             jewels.isPowerUpTurn = true;
-            PowerUpBase powerUpChosen= spawnablePowerUps[(int)Random.Range(0.0f, 5.99f)];
-            // powerUp = new PowerUp(powerUpChosen);
+            PowerUpBase powerUpChosen = spawnablePowerUps[(int)Random.Range(0.0f, 5.99f)];
+            
+            powerUp.SetPowerUp(powerUpChosen);
+            powerUp.gameObject.SetActive(true);
             
         } else {
             jewels.isPowerUpTurn = false;
@@ -59,15 +62,15 @@ public class Tile : MonoBehaviour
 
                     if (powerUp != null)
                     {
-                        ObtainPowerup1(player1, powerUpBase);
-                        powerUpBase = null;
+                        ObtainPowerup1(player1, powerUp);
+                        powerUp.Reset();
                     }
                     int jewelsObtained = jewels.NumJewels;
                     List<PowerUp> toBeRemoved = new List<PowerUp>();
                     foreach (var playerPowerups in player1.powerUps)
                     { // loop thru powerups that the player has alrdy obtained
-                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
-                        if (playerPowerups.EffectTarget == EffectTarget.Self)
+                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
+                        if (playerPowerups.Base.EffectTarget == EffectTarget.Self)
                         { //if the powerup is meant to target self (e.g. double coins on tile)
                             jewelsObtained = effect.CoinsObtainedAfterEffect(jewelsObtained);
                             playerPowerups.TurnsLeft--; //reduce the turns this power up can be used by 1 (for now all power ups only last 1 turn)
@@ -88,17 +91,17 @@ public class Tile : MonoBehaviour
                 }
                 else if ((int)playersJumpingHere[0] == 2)
                 {
-                    if (powerUpBase != null)
+                    if (powerUp.Base != null)
                     {
-                        ObtainPowerup2(player2, powerUpBase);
-                        powerUpBase = null;
+                        ObtainPowerup2(player2, powerUp);
+                        powerUp.Reset();
                     }
                     int jewelsObtained = jewels.NumJewels;
                     List<PowerUp> toBeRemoved = new List<PowerUp>();
                     foreach (var playerPowerups in player2.powerUps)
                     { // loop thru powerups that the player has alrdy obtained
-                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
-                        if (playerPowerups.EffectTarget == EffectTarget.Self)
+                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
+                        if (playerPowerups.Base.EffectTarget == EffectTarget.Self)
                         { //if the powerup is meant to target self (e.g. double coins on tile)
                             jewelsObtained = effect.CoinsObtainedAfterEffect(jewelsObtained);
                             playerPowerups.TurnsLeft--; //reduce the turns this power up can be used by 1 (for now all power ups only last 1 turn)
@@ -119,17 +122,17 @@ public class Tile : MonoBehaviour
                 }
                 else if ((int)playersJumpingHere[0] == 3)
                 {
-                    if (powerUpBase != null)
+                    if (powerUp.Base != null)
                     {
-                        ObtainPowerup3(player3, powerUpBase);
-                        powerUpBase = null;
+                        ObtainPowerup3(player3, powerUp);
+                        powerUp.Reset();
                     }
                     int jewelsObtained = jewels.NumJewels;
                     List<PowerUp> toBeRemoved = new List<PowerUp>();
                     foreach (var playerPowerups in player3.powerUps)
                     { // loop thru powerups that the player has alrdy obtained
-                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
-                        if (playerPowerups.EffectTarget == EffectTarget.Self)
+                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
+                        if (playerPowerups.Base.EffectTarget == EffectTarget.Self)
                         { //if the powerup is meant to target self (e.g. double coins on tile)
                             jewelsObtained = effect.CoinsObtainedAfterEffect(jewelsObtained);
                             playerPowerups.TurnsLeft--; //reduce the turns this power up can be used by 1 (for now all power ups only last 1 turn)
@@ -151,17 +154,17 @@ public class Tile : MonoBehaviour
                 else if ((int)playersJumpingHere[0] == 4)
                 {
                     //if there is powerUp on this tile to be obtained
-                    if (powerUpBase != null)
+                    if (powerUp.Base != null)
                     {
-                        ObtainPowerup4(player4, powerUpBase);
-                        powerUpBase = null;
+                        ObtainPowerup4(player4, powerUp);
+                        powerUp.Reset();
                     }
                     int jewelsObtained = jewels.NumJewels;
                     List<PowerUp> toBeRemoved = new List<PowerUp>();
                     foreach (var playerPowerups in player4.powerUps)
                     { // loop thru powerups that the player has alrdy obtained
-                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
-                        if (playerPowerups.EffectTarget == EffectTarget.Self)
+                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
+                        if (playerPowerups.Base.EffectTarget == EffectTarget.Self)
                         { //if the powerup is meant to target self (e.g. double coins on tile)
                             jewelsObtained = effect.CoinsObtainedAfterEffect(jewelsObtained);
                             playerPowerups.TurnsLeft--; //reduce the turns this power up can be used by 1 (for now all power ups only last 1 turn)
@@ -180,14 +183,14 @@ public class Tile : MonoBehaviour
                     Debug.Log($"player4 now has {player4.jewel} golds");
                 }
                 jewels.DestroyAllJewels();
-                // powerUp.gameObject.SetActive(false); // "destroy" the powerUp object on screen
+                powerUp.gameObject.SetActive(false); // "destroy" the powerUp object on screen
             }
             else
             {
-                List<PowerUpBase> toBeRemoved1 = new List<PowerUpBase>();
-                List<PowerUpBase> toBeRemoved2 = new List<PowerUpBase>();
-                List<PowerUpBase> toBeRemoved3 = new List<PowerUpBase>();
-                List<PowerUpBase> toBeRemoved4 = new List<PowerUpBase>();
+                List<PowerUp> toBeRemoved1 = new List<PowerUp>();
+                List<PowerUp> toBeRemoved2 = new List<PowerUp>();
+                List<PowerUp> toBeRemoved3 = new List<PowerUp>();
+                List<PowerUp> toBeRemoved4 = new List<PowerUp>();
                 //More than one person jumping on this tile, everyone's powerup affect others
                 for (int powerUpPlayer = 0; powerUpPlayer < playersJumpingHere.Count; powerUpPlayer++)
                 {
@@ -203,9 +206,9 @@ public class Tile : MonoBehaviour
                                     int updatedJewel = player2.jewel;
                                     foreach (var playerPowerups in player1.powerUps)
                                     { // loop thru powerups that the player has alrdy obtained
-                                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
+                                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
                                         //if the powerup is meant to target opponent (e.g. knock off)
-                                        if (playerPowerups.EffectTarget == EffectTarget.Opponent)
+                                        if (playerPowerups.Base.EffectTarget == EffectTarget.Opponent)
                                         {
                                             updatedJewel = effect.CoinsObtainedAfterEffect(updatedJewel);
                                             //if this power up has only 1 turn left, and not yet added to the remove list
@@ -222,9 +225,9 @@ public class Tile : MonoBehaviour
                                     int updatedJewel = player3.jewel;
                                     foreach (var playerPowerups in player1.powerUps)
                                     { // loop thru powerups that the player has alrdy obtained
-                                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
+                                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
                                         //if the powerup is meant to target opponent (e.g. knock off)
-                                        if (playerPowerups.EffectTarget == EffectTarget.Opponent)
+                                        if (playerPowerups.Base.EffectTarget == EffectTarget.Opponent)
                                         {
                                             updatedJewel = effect.CoinsObtainedAfterEffect(updatedJewel);
                                             //if this power up has only 1 turn left, and not yet added to the remove list
@@ -241,9 +244,9 @@ public class Tile : MonoBehaviour
                                     int updatedJewel = player4.jewel;
                                     foreach (var playerPowerups in player1.powerUps)
                                     { // loop thru powerups that the player has alrdy obtained
-                                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
+                                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
                                         //if the powerup is meant to target opponent (e.g. knock off)
-                                        if (playerPowerups.EffectTarget == EffectTarget.Opponent)
+                                        if (playerPowerups.Base.EffectTarget == EffectTarget.Opponent)
                                         {
                                             updatedJewel = effect.CoinsObtainedAfterEffect(updatedJewel);
                                             //if this power up has only 1 turn left, and not yet added to the remove list
@@ -265,9 +268,9 @@ public class Tile : MonoBehaviour
                                     int updatedJewel = player1.jewel;
                                     foreach (var playerPowerups in player2.powerUps)
                                     { // loop thru powerups that the player has alrdy obtained
-                                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
+                                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
                                         //if the powerup is meant to target opponent (e.g. knock off)
-                                        if (playerPowerups.EffectTarget == EffectTarget.Opponent)
+                                        if (playerPowerups.Base.EffectTarget == EffectTarget.Opponent)
                                         {
                                             updatedJewel = effect.CoinsObtainedAfterEffect(updatedJewel);
                                             //if this power up has only 1 turn left, and not yet added to the remove list
@@ -284,9 +287,9 @@ public class Tile : MonoBehaviour
                                     int updatedJewel = player3.jewel;
                                     foreach (var playerPowerups in player2.powerUps)
                                     { // loop thru powerups that the player has alrdy obtained
-                                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
+                                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
                                         //if the powerup is meant to target opponent (e.g. knock off)
-                                        if (playerPowerups.EffectTarget == EffectTarget.Opponent)
+                                        if (playerPowerups.Base.EffectTarget == EffectTarget.Opponent)
                                         {
                                             updatedJewel = effect.CoinsObtainedAfterEffect(updatedJewel);
                                             //if this power up has only 1 turn left, and not yet added to the remove list
@@ -303,9 +306,9 @@ public class Tile : MonoBehaviour
                                     int updatedJewel = player4.jewel;
                                     foreach (var playerPowerups in player2.powerUps)
                                     { // loop thru powerups that the player has alrdy obtained
-                                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
+                                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
                                         //if the powerup is meant to target opponent (e.g. knock off)
-                                        if (playerPowerups.EffectTarget == EffectTarget.Opponent)
+                                        if (playerPowerups.Base.EffectTarget == EffectTarget.Opponent)
                                         {
                                             updatedJewel = effect.CoinsObtainedAfterEffect(updatedJewel);
                                             //if this power up has only 1 turn left, and not yet added to the remove list
@@ -327,9 +330,9 @@ public class Tile : MonoBehaviour
                                     int updatedJewel = player2.jewel;
                                     foreach (var playerPowerups in player3.powerUps)
                                     { // loop thru powerups that the player has alrdy obtained
-                                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
+                                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
                                         //if the powerup is meant to target opponent (e.g. knock off)
-                                        if (playerPowerups.EffectTarget == EffectTarget.Opponent)
+                                        if (playerPowerups.Base.EffectTarget == EffectTarget.Opponent)
                                         {
                                             updatedJewel = effect.CoinsObtainedAfterEffect(updatedJewel);
                                             //if this power up has only 1 turn left, and not yet added to the remove list
@@ -346,9 +349,9 @@ public class Tile : MonoBehaviour
                                     int updatedJewel = player1.jewel;
                                     foreach (var playerPowerups in player3.powerUps)
                                     { // loop thru powerups that the player has alrdy obtained
-                                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
+                                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
                                         //if the powerup is meant to target opponent (e.g. knock off)
-                                        if (playerPowerups.EffectTarget == EffectTarget.Opponent)
+                                        if (playerPowerups.Base.EffectTarget == EffectTarget.Opponent)
                                         {
                                             updatedJewel = effect.CoinsObtainedAfterEffect(updatedJewel);
                                             //if this power up has only 1 turn left, and not yet added to the remove list
@@ -365,9 +368,9 @@ public class Tile : MonoBehaviour
                                     int updatedJewel = player4.jewel;
                                     foreach (var playerPowerups in player3.powerUps)
                                     { // loop thru powerups that the player has alrdy obtained
-                                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
+                                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
                                         //if the powerup is meant to target opponent (e.g. knock off)
-                                        if (playerPowerups.EffectTarget == EffectTarget.Opponent)
+                                        if (playerPowerups.Base.EffectTarget == EffectTarget.Opponent)
                                         {
                                             updatedJewel = effect.CoinsObtainedAfterEffect(updatedJewel);
                                             //if this power up has only 1 turn left, and not yet added to the remove list
@@ -389,9 +392,9 @@ public class Tile : MonoBehaviour
                                     int updatedJewel = player2.jewel;
                                     foreach (var playerPowerups in player4.powerUps)
                                     { // loop thru powerups that the player has alrdy obtained
-                                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
+                                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
                                         //if the powerup is meant to target opponent (e.g. knock off)
-                                        if (playerPowerups.EffectTarget == EffectTarget.Opponent)
+                                        if (playerPowerups.Base.EffectTarget == EffectTarget.Opponent)
                                         {
                                             updatedJewel = effect.CoinsObtainedAfterEffect(updatedJewel);
                                             //if this power up has only 1 turn left, and not yet added to the remove list
@@ -408,9 +411,9 @@ public class Tile : MonoBehaviour
                                     int updatedJewel = player3.jewel;
                                     foreach (var playerPowerups in player4.powerUps)
                                     { // loop thru powerups that the player has alrdy obtained
-                                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
+                                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
                                         //if the powerup is meant to target opponent (e.g. knock off)
-                                        if (playerPowerups.EffectTarget == EffectTarget.Opponent)
+                                        if (playerPowerups.Base.EffectTarget == EffectTarget.Opponent)
                                         {
                                             updatedJewel = effect.CoinsObtainedAfterEffect(updatedJewel);
                                             //if this power up has only 1 turn left, and not yet added to the remove list
@@ -427,9 +430,9 @@ public class Tile : MonoBehaviour
                                     int updatedJewel = player1.jewel;
                                     foreach (var playerPowerups in player4.powerUps)
                                     { // loop thru powerups that the player has alrdy obtained
-                                        Effects effect = EffectsDB.Effects[playerPowerups.Effect.Id];
+                                        Effects effect = EffectsDB.Effects[playerPowerups.Base.Effect.Id];
                                         //if the powerup is meant to target opponent (e.g. knock off)
-                                        if (playerPowerups.EffectTarget == EffectTarget.Opponent)
+                                        if (playerPowerups.Base.EffectTarget == EffectTarget.Opponent)
                                         {
                                             updatedJewel = effect.CoinsObtainedAfterEffect(updatedJewel);
                                             //if this power up has only 1 turn left, and not yet added to the remove list
@@ -508,72 +511,76 @@ public class Tile : MonoBehaviour
     //Altenratively you can have 1 player script and attach to all different players, dunnid 4 scripts
     //By doing so, writing one function ObtainPowerUp(Player player...) is enuf, instead of writing one
     //function for each player.
-    void ObtainPowerup1(Player1 player, PowerUpBase powerUpBase)
+    void ObtainPowerup1(Player1 player, PowerUp powerUp)
     {
-        Debug.Log("HEre");
-        Debug.Log(powerUp);
-        Debug.Log(powerUp.Base);
-        Debug.Log(powerUp.Base.WhenToApply);
         // Effects must be applied now (e.g. double all coins, half all coins)
-        Debug.Log(powerUpBase.WhenToApply);
-        Debug.Log(WhenToApplyEffect.StartingNow);
-        if (powerUpBase.WhenToApply == WhenToApplyEffect.StartingNow)
+
+        if (powerUp.Base.WhenToApply == WhenToApplyEffect.StartingNow)
         {
-            Effects effect = EffectsDB.Effects[powerUpBase.Effect.Id]; //get effect of this powerup
+            Effects effect = EffectsDB.Effects[powerUp.Base.Effect.Id]; //get effect of this powerup
             int newPlayerJewel = effect.CoinsObtainedAfterEffect(player.jewel);
             player.jewel = newPlayerJewel;   //set the player's jewel (e.g. to two times it's original jewel)
         }
-        else if (powerUpBase.WhenToApply == WhenToApplyEffect.StartingNextRound)
+        else if (powerUp.Base.WhenToApply == WhenToApplyEffect.StartingNextRound)
         {
-            player.powerUps.Add(powerUpBase);
+            player.powerUps.Add(powerUp);
         }
     }
-    void ObtainPowerup2(Player2 player, PowerUpBase powerUpBase)
+    void ObtainPowerup2(Player2 player, PowerUp powerUp)
     {
         // Effects must be applied now (e.g. double all coins, half all coins)
-        Debug.Log(powerUpBase.WhenToApply);
-        Debug.Log(WhenToApplyEffect.StartingNow);
-        if (powerUpBase.WhenToApply == WhenToApplyEffect.StartingNow)
+
+        if (powerUp.Base.WhenToApply == WhenToApplyEffect.StartingNow)
         {
-            Effects effect = EffectsDB.Effects[powerUpBase.Effect.Id]; //get effect of this powerup
+            Effects effect = EffectsDB.Effects[powerUp.Base.Effect.Id]; //get effect of this powerup
             int newPlayerJewel = effect.CoinsObtainedAfterEffect(player.jewel);
             player.jewel = newPlayerJewel;   //set the player's jewel (e.g. to two times it's original jewel)
         }
-        else if (powerUpBase.WhenToApply == WhenToApplyEffect.StartingNextRound)
+        else if (powerUp.Base.WhenToApply == WhenToApplyEffect.StartingNextRound)
         {
-            player.powerUps.Add(powerUpBase);
+            player.powerUps.Add(powerUp);
         }
     }
-    void ObtainPowerup3(Player3 player, PowerUpBase powerUpBase)
+    void ObtainPowerup3(Player3 player, PowerUp powerUp)
     {
         // Effects must be applied now (e.g. double all coins, half all coins)
-        Debug.Log(powerUpBase.WhenToApply);
-        Debug.Log(WhenToApplyEffect.StartingNow);
-        if (powerUpBase.WhenToApply == WhenToApplyEffect.StartingNow)
+
+        if (powerUp.Base.WhenToApply == WhenToApplyEffect.StartingNow)
         {
-            Effects effect = EffectsDB.Effects[powerUpBase.Effect.Id]; //get effect of this powerup
+            Effects effect = EffectsDB.Effects[powerUp.Base.Effect.Id]; //get effect of this powerup
             int newPlayerJewel = effect.CoinsObtainedAfterEffect(player.jewel);
             player.jewel = newPlayerJewel;   //set the player's jewel (e.g. to two times it's original jewel)
         }
-        else if (powerUpBase.WhenToApply == WhenToApplyEffect.StartingNextRound)
+        else if (powerUp.Base.WhenToApply == WhenToApplyEffect.StartingNextRound)
         {
-            player.powerUps.Add(powerUpBase);
+            player.powerUps.Add(powerUp);
         }
     }
-    void ObtainPowerup4(Player4 player, PowerUpBase powerUpBase)
+    void ObtainPowerup4(Player4 player, PowerUp powerUp)
     {
         // Effects must be applied now (e.g. double all coins, half all coins)
-        Debug.Log(powerUpBase.WhenToApply);
-        Debug.Log(WhenToApplyEffect.StartingNow);
-        if (powerUpBase.WhenToApply == WhenToApplyEffect.StartingNow)
+
+        if (powerUp.Base.WhenToApply == WhenToApplyEffect.StartingNow)
         {
-            Effects effect = EffectsDB.Effects[powerUpBase.Effect.Id]; //get effect of this powerup
+            Effects effect = EffectsDB.Effects[powerUp.Base.Effect.Id]; //get effect of this powerup
             int newPlayerJewel = effect.CoinsObtainedAfterEffect(player.jewel);
             player.jewel = newPlayerJewel;   //set the player's jewel (e.g. to two times it's original jewel)
         }
-        else if (powerUpBase.WhenToApply == WhenToApplyEffect.StartingNextRound)
+        else if (powerUp.Base.WhenToApply == WhenToApplyEffect.StartingNextRound)
         {
-            player.powerUps.Add(powerUpBase);
+            player.powerUps.Add(powerUp);
+        }
+    }
+
+    private void OnMouseEnter() {
+        if(powerUp.Base != null) {
+            gameUI.ShowPowerUpTooltip(powerUp.Base);
+        }
+    }
+
+    private void OnMouseExit() {
+        if(powerUp.Base != null) {
+            gameUI.HidePowerUpTooltip();
         }
     }
 

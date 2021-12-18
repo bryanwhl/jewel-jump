@@ -21,7 +21,6 @@ public class GameController : MonoBehaviour
     public static bool Player3CoinSettled;
     public static bool Player4CoinSettled;
     public static int numToSpawnPowerUp;
-    [SerializeField] List<PowerUpBase> spawnablePowerUps;
     public static bool isGameOver = false;
     public GameUI GameUI;
 
@@ -74,7 +73,6 @@ public class GameController : MonoBehaviour
         // Debug.Log(Player2CoinSettled);
         // Debug.Log(Player3CoinSettled);
         // Debug.Log(Player4CoinSettled);
-        Debug.Log("=================");
         if (round <= 10 && areAllInputsIn == false && !isGameOver)
         {
             // Inputs for player 1

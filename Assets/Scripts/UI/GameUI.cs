@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameUI : MonoBehaviour
 {
     public GameObject gameOverScreen;
+    public PowerupTooltip powerupTooltip;
     public AudioClip gameOverMusic;
     // Start is called before the first frame update
     void Start()
@@ -26,5 +27,14 @@ public class GameUI : MonoBehaviour
     public void TriggerGameOver() {
         gameOverScreen.SetActive(true);
         AudioManager.instance.PlayMusic(gameOverMusic);
+    }
+
+    public void ShowPowerUpTooltip(PowerUpBase powerUp) {
+        powerupTooltip.SetPowerup(powerUp);
+        powerupTooltip.gameObject.SetActive(true);
+    }
+
+    public void HidePowerUpTooltip() {
+        powerupTooltip.gameObject.SetActive(false);
     }
 }
