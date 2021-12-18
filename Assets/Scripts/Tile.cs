@@ -56,6 +56,7 @@ public class Tile : MonoBehaviour
             GameController.numToSpawnPowerUp = -1;
         } else {
             jewels.isPowerUpTurn = false;
+            powerUp = null;
         }
         if (GameController.isAnimationComplete == true)
         {

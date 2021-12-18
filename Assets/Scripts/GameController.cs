@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     public static int numToSpawnPowerUp;
     public static bool isGameOver = false;
     public GameUI GameUI;
+    public RuleChange RuleChange;
     public static int rankThatWins;
 
     void resetAllInputsIn()
@@ -54,6 +55,7 @@ public class GameController : MonoBehaviour
         numToSpawnPowerUp = (int)Random.Range(1.0f, 10.0f);
         rankThatWins = 1;
         GameUI = GameObject.Find("GameUI").GetComponent<GameUI>();
+        RuleChange = GameObject.Find("RuleChange").GetComponent<RuleChange>();
     }
 
     // Update is called once per frame
@@ -200,6 +202,7 @@ public class GameController : MonoBehaviour
                 if (round == 4 || round == 8) {
                     rankThatWins = (int)Random.Range(1.0f, 4.99f);
                     // Display UI for change of winner
+                    RuleChange.ruleChangeText = "Rule change! the player with number of coins ranking " + rankThatWins + " shall win!";
                 }
             }
         }
