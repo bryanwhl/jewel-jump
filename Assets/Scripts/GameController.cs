@@ -21,7 +21,6 @@ public class GameController : MonoBehaviour
     public static bool Player3CoinSettled;
     public static bool Player4CoinSettled;
     public static int numToSpawnPowerUp;
-    [SerializeField] List<PowerUpBase> spawnablePowerUps;
     public static bool isGameOver = false;
     public GameUI GameUI;
     public static int rankThatWins;

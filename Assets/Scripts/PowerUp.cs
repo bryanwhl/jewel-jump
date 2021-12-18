@@ -7,11 +7,14 @@ public class PowerUp : MonoBehaviour
 {
     private PowerUpBase powerupBase { get; set; }
     public int TurnsLeft { get; set; }
-    public PowerUp(PowerUpBase powerupBase)
-    {
-        this.powerupBase = powerupBase;
+    public PowerUpBase Base => powerupBase;
+
+    public void SetPowerUp(PowerUpBase powerUp) {
+        this.powerupBase = powerUp;
         TurnsLeft = powerupBase.LastingTurns;
     }
 
-    public PowerUpBase Base => powerupBase;
+    public void Reset() {
+        this.powerupBase = null;
+    }
 }
