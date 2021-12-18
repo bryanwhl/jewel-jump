@@ -10,6 +10,7 @@ public class PlayerScore : MonoBehaviour
     public Image spriteRenderer;
     public Text playerName;
     public Text score;
+    public GameObject winIcon;
     GameController gameController;
 
     // Start is called before the first frame update
@@ -34,5 +35,9 @@ public class PlayerScore : MonoBehaviour
         } else if(player == 4) {
             score.text = gameController.Player4.jewel.ToString();
         }
+    }
+
+    public void ShowWin() {
+        winIcon.SetActive(true);
     }
 }

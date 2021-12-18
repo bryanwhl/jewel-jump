@@ -3220,22 +3220,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1348910282, guid: 7b1237924de2f4d3591f75bd6c466c0a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2032294105, guid: 7b1237924de2f4d3591f75bd6c466c0a, type: 3}
-      propertyPath: m_Text
-      value: Rule change! the player with number of coins ranking 1 shall win!
-      objectReference: {fileID: 0}
-    - target: {fileID: 52890830908287632, guid: 7b1237924de2f4d3591f75bd6c466c0a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 52890830957514676, guid: 7b1237924de2f4d3591f75bd6c466c0a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3067527276566874887, guid: 7b1237924de2f4d3591f75bd6c466c0a, type: 3}
       propertyPath: m_Pivot.x
       value: 0

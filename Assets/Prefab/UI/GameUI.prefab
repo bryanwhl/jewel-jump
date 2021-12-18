@@ -200,7 +200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1348910283
 RectTransform:
   m_ObjectHideFlags: 0
@@ -273,6 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff55c5f7d63b14974af1ff4318519971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ruleChangeText: {fileID: 1400405088}
 --- !u!1 &1400405086
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,7 +589,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The winner will be the person with the most coins!
+  m_Text: Rule change! the player with number of coins ranking 1 shall win!
 --- !u!1 &2040134967
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameScene: Farrell
+  playerScores: []
 --- !u!1 &3067527276566874908
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,7 +970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b22d9c78144427ea8a14e871791789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverScreen: {fileID: 3067527276022752222}
+  gameOverScreen: {fileID: 674117451}
   powerupTooltip: {fileID: 3744142233387747702}
   ruleChangeUI: {fileID: 1348910288}
   gameOverMusic: {fileID: 8300000, guid: 41d48e369d6794c1bae4e7d3826b7501, type: 3}

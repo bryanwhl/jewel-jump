@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ScoreboardUI : MonoBehaviour
 {
     public string gameScene;
+    public List<PlayerScore> playerScores;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +25,9 @@ public class ScoreboardUI : MonoBehaviour
 
     public void Quit() {
         Application.Quit();
+    }
+
+    public void SetWinner(int winner) {
+        playerScores[winner - 1].ShowWin();
     }
 }

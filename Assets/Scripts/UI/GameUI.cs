@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
-    public GameObject gameOverScreen;
+    public ScoreboardUI gameOverScreen;
     public PowerupTooltip powerupTooltip;
     public RuleChange ruleChangeUI;
     public AudioClip gameOverMusic;
@@ -25,8 +25,9 @@ public class GameUI : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void TriggerGameOver() {
-        gameOverScreen.SetActive(true);
+    public void TriggerGameOver(int winner) {
+        gameOverScreen.gameObject.SetActive(true);
+        gameOverScreen.SetWinner(winner);
         AudioManager.instance.PlayMusic(gameOverMusic);
     }
 

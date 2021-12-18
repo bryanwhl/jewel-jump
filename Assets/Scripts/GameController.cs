@@ -165,8 +165,7 @@ public class GameController : MonoBehaviour
         }
 
         if(round > 10 && !isGameOver) {
-            isGameOver = true;
-            GameUI.TriggerGameOver();
+            
         }
 
         if (Player1Flag != 0 && Player2Flag != 0 && Player3Flag != 0 && Player4Flag != 0)
@@ -205,7 +204,9 @@ public class GameController : MonoBehaviour
                 }
             }
         }
-        if (round == 11) {
+        if (round == 11 && !isGameOver) {
+            isGameOver = true;
+
             // Game Ends
             Debug.Log(Player1.GetComponent<Player1>().jewel);
             Debug.Log(Player2.GetComponent<Player2>().jewel);
@@ -218,15 +219,22 @@ public class GameController : MonoBehaviour
             results.Add(Player4.GetComponent<Player4>().jewel);
             results.Sort();
             int jewelNumOfWinner = (int)results[rankThatWins - 1];
+            int winner = 0;
             if (Player1.GetComponent<Player1>().jewel == jewelNumOfWinner) {
                 Debug.Log("Player 1 Wins");
+                winner = 1;
             } else if (Player2.GetComponent<Player2>().jewel == jewelNumOfWinner) {
                 Debug.Log("Player 2 Wins");
+                winner = 2;
             } else if (Player3.GetComponent<Player3>().jewel == jewelNumOfWinner) {
                 Debug.Log("Player 3 Wins");
+                winner = 3;
             } else if (Player4.GetComponent<Player4>().jewel == jewelNumOfWinner) {
                 Debug.Log("Player 4 Wins");
+                winner = 4;
             }
+
+            GameUI.TriggerGameOver(winner);
         }
     }
 }

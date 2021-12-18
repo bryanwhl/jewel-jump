@@ -70,8 +70,7 @@ public class Tile : MonoBehaviour
                     if (powerUp != null)
                     {
                         ObtainPowerup1(player1, powerUp);
-                        powerUp.gameObject.SetActive(false);
-                        powerUp = null;
+                        
                         Debug.Log("HERE");
                     }
                     int jewelsObtained = jewels.NumJewels;
@@ -103,8 +102,7 @@ public class Tile : MonoBehaviour
                     if (powerUp != null)
                     {
                         ObtainPowerup2(player2, powerUp);
-                        powerUp.gameObject.SetActive(false);
-                        powerUp = null;
+                        
                         Debug.Log("HERE");
                     }
                     int jewelsObtained = jewels.NumJewels;
@@ -136,8 +134,7 @@ public class Tile : MonoBehaviour
                     if (powerUp != null)
                     {
                         ObtainPowerup3(player3, powerUp);
-                        powerUp.gameObject.SetActive(false);
-                        powerUp = null;
+                        
                         Debug.Log("HERE");
                     }
                     int jewelsObtained = jewels.NumJewels;
@@ -177,8 +174,7 @@ public class Tile : MonoBehaviour
                     if (powerUp != null)
                     {
                         ObtainPowerup4(player4, powerUp);
-                        powerUp.gameObject.SetActive(false);
-                        powerUp = null;
+                        
                         Debug.Log("HERE");
                     }
                     int jewelsObtained = jewels.NumJewels;
@@ -205,6 +201,7 @@ public class Tile : MonoBehaviour
                     Debug.Log($"player4 now has {player4.jewel} golds");
                 }
                 jewels.DestroyAllJewels();
+                
                 // powerUp?.gameObject.SetActive(false); // "destroy" the powerUp object on screen
             }
             else
@@ -508,6 +505,8 @@ public class Tile : MonoBehaviour
                 }
             }
             playersJumpingHere = new ArrayList();
+            powerUp?.gameObject.SetActive(false);
+            powerUp = null;
         }
     }
 
