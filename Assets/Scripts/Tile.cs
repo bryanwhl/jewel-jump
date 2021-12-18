@@ -49,7 +49,6 @@ public class Tile : MonoBehaviour
             
         } else {
             jewels.isPowerUpTurn = false;
-            powerUp.gameObject.SetActive(false);
             powerUp = null;
         }
         if (GameController.isAnimationComplete == true)

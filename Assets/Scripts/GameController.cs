@@ -203,7 +203,6 @@ public class GameController : MonoBehaviour
                     rankThatWins = (int)Random.Range(1.0f, 4.99f);
                     // Display UI for change of winner
                     RuleChange.ruleChangeText = "Rule change! the player with number of coins ranking " + rankThatWins + " shall win!";
-                    RuleChange.gameObject.setActive(true);
                 }
             }
         }
