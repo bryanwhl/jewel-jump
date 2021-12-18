@@ -39,7 +39,8 @@ public class GameUI : MonoBehaviour
         powerupTooltip.gameObject.SetActive(false);
     }
 
-    public void ShowRuleChange() {
+    public void ShowRuleChange(string text) {
         ruleChangeUI.gameObject.SetActive(true);
+        ruleChangeUI.SetText(text);
     }
 }

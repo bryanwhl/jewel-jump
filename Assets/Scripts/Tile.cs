@@ -56,7 +56,6 @@ public class Tile : MonoBehaviour
             GameController.numToSpawnPowerUp = -1;
         } else {
             jewels.isPowerUpTurn = false;
-            powerUp = null;
         }
         if (GameController.isAnimationComplete == true)
         {
@@ -71,6 +70,9 @@ public class Tile : MonoBehaviour
                     if (powerUp != null)
                     {
                         ObtainPowerup1(player1, powerUp);
+                        powerUp.gameObject.SetActive(false);
+                        powerUp = null;
+                        Debug.Log("HERE");
                     }
                     int jewelsObtained = jewels.NumJewels;
                     List<PowerUp> toBeRemoved = new List<PowerUp>();
@@ -101,6 +103,9 @@ public class Tile : MonoBehaviour
                     if (powerUp != null)
                     {
                         ObtainPowerup2(player2, powerUp);
+                        powerUp.gameObject.SetActive(false);
+                        powerUp = null;
+                        Debug.Log("HERE");
                     }
                     int jewelsObtained = jewels.NumJewels;
                     List<PowerUp> toBeRemoved = new List<PowerUp>();
@@ -131,6 +136,9 @@ public class Tile : MonoBehaviour
                     if (powerUp != null)
                     {
                         ObtainPowerup3(player3, powerUp);
+                        powerUp.gameObject.SetActive(false);
+                        powerUp = null;
+                        Debug.Log("HERE");
                     }
                     int jewelsObtained = jewels.NumJewels;
                     List<PowerUp> toBeRemoved = new List<PowerUp>();
@@ -169,6 +177,9 @@ public class Tile : MonoBehaviour
                     if (powerUp != null)
                     {
                         ObtainPowerup4(player4, powerUp);
+                        powerUp.gameObject.SetActive(false);
+                        powerUp = null;
+                        Debug.Log("HERE");
                     }
                     int jewelsObtained = jewels.NumJewels;
                     List<PowerUp> toBeRemoved = new List<PowerUp>();
@@ -194,7 +205,7 @@ public class Tile : MonoBehaviour
                     Debug.Log($"player4 now has {player4.jewel} golds");
                 }
                 jewels.DestroyAllJewels();
-                powerUp?.gameObject.SetActive(false); // "destroy" the powerUp object on screen
+                // powerUp?.gameObject.SetActive(false); // "destroy" the powerUp object on screen
             }
             else
             {

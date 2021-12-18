@@ -180,6 +180,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a729877c574431fb3ffbcef1190563, type: 3}
+--- !u!1 &121486585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 121486586}
+  m_Layer: 2
+  m_Name: PowerupSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &121486586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121486585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.39, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_Children: []
+  m_Father: {fileID: 680761384}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &181127293
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +931,7 @@ MonoBehaviour:
   Player3: {fileID: 741887398}
   Player4: {fileID: 481473857}
   GameUI: {fileID: 0}
+  RuleChange: {fileID: 0}
 --- !u!4 &508257530
 Transform:
   m_ObjectHideFlags: 0
@@ -3182,70 +3213,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8305681285921185371, guid: 82d4d0a398a124905a57799979db0e9c, type: 3}
   m_PrefabInstance: {fileID: 2143004059}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2478976268763203971
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 680761384}
-    m_Modifications:
-    - target: {fileID: 2478976268817446265, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2478976268817446265, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2478976268817446265, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 2478976268817446265, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2478976268817446265, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2478976268817446265, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2478976268817446265, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2478976268817446265, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2478976268817446265, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2478976268817446265, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2478976268817446265, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2478976268817446266, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-      propertyPath: m_Name
-      value: PowerupSpawn
-      objectReference: {fileID: 0}
-    - target: {fileID: 2478976268817446266, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2478976268817446270, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-    - {fileID: 2478976268817446271, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-    - {fileID: 2478976268817446264, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 7706f6cbf13514db4bd32aec5083e418, type: 3}
 --- !u!1001 &3067527276429445171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3253,6 +3220,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1348910282, guid: 7b1237924de2f4d3591f75bd6c466c0a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032294105, guid: 7b1237924de2f4d3591f75bd6c466c0a, type: 3}
+      propertyPath: m_Text
+      value: Rule change! the player with number of coins ranking 1 shall win!
+      objectReference: {fileID: 0}
     - target: {fileID: 52890830908287632, guid: 7b1237924de2f4d3591f75bd6c466c0a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

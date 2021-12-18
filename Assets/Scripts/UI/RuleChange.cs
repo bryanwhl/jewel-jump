@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class RuleChange : MonoBehaviour
 {
-    public string ruleChangeText;
+    public Text ruleChangeText;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +21,8 @@ public class RuleChange : MonoBehaviour
     public void HideRuleChange() {
         gameObject.SetActive(false);
     }
-    
-    public void Exit() {
-        SceneManager.LoadScene(ruleChangeText);
-    }
 
-    public void Quit() {
-        Application.Quit();
+    public void SetText(string text) {
+        ruleChangeText.text = text;
     }
 }
