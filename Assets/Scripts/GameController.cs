@@ -218,7 +218,7 @@ public class GameController : MonoBehaviour
             results.Add(Player3.GetComponent<Player3>().jewel);
             results.Add(Player4.GetComponent<Player4>().jewel);
             results.Sort();
-            int jewelNumOfWinner = (int)results[rankThatWins - 1];
+            int jewelNumOfWinner = (int)results[4 - rankThatWins];
             int winner = 0;
             if (Player1.GetComponent<Player1>().jewel == jewelNumOfWinner) {
                 Debug.Log("Player 1 Wins");
